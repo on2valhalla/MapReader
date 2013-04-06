@@ -15,16 +15,19 @@ MapReader::MapReader(QWidget *parent) :
 	getNames("../../../../../ass3-table.txt");
 
 
-	namedWindow("Map");
-	imshow("Map", campusImage);
+//	namedWindow("Map");
+//	imshow("Map", campusImage);
 
 //	cout << campusLabeled.rows << " " << campusLabeled.cols << " "
 //		 << (int)campusLabeled.at<uchar>(40,7) << endl;
 	Mat wRects(campusImage.size(), CV_8UC1, Scalar(0));
-	processFeatures(campusLabeled, wRects);
+    processFeatures(campusLabeled, wRects);
+    describeBuildings();
 
     for(uchar i = 0; i < buildings.size() ; i++)
-        cout << buildings[i] <<endl;
+        for( uchar j = 0; j < buildings.size(); j++)
+            cout << buildings[i].name << " is north of " << buildings[j].name << ": "
+                    << north( buildings[j], buildings[i]) << endl;
 
 	displayMat(wRects);
 }
@@ -88,9 +91,7 @@ void MapReader::processFeatures(const Mat& labeled, Mat& wRects)
 
 
 //        wRects += labeled;
-	}
-
-    describeBuildings();
+    }
 
 }
 
@@ -256,4 +257,31 @@ void MapReader::displayMat(const cv::Mat& image)
 	//Display the QImage in the Label
 	QPixmap img_pix = QPixmap::fromImage(img_qt.rgbSwapped()); //BGR to RGB
 	this->ui->lblImage->setPixmap(img_pix.scaled(ui->lblImage->size(), Qt::KeepAspectRatio));
+}
+
+bool MapReader::north(const Building &s, const Building &g)
+{
+    if(g.MBR.y + g.MBR.height * .80 < s.MBR.y
+                && (abs(g.centerOfMass.x - s.centerOfMass.x) * .5 < abs(g.centerOfMass.y - s.centerOfMass.y)
+                    || abs(g.centerOfMass.x - s.MBR.x) * .5 < abs(g.centerOfMass.y - s.centerOfMass.y)
+                    || abs(g.centerOfMass.x - (s.MBR.x + s.MBR.width)) * .5 < abs(g.centerOfMass.y - s.centerOfMass.y)))
+            return true;
+    else
+        return false;
+}
+bool MapReader::south(const Building &s, const Building &g)
+{
+    return true;
+}
+bool MapReader::east(const Building &s, const Building &g)
+{
+    return true;
+}
+bool MapReader::west(const Building &s, const Building &g)
+{
+    return true;
+}
+bool MapReader::near(const Building &s, const Building &g)
+{
+    return true;
 }
