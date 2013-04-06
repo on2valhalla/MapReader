@@ -19,6 +19,7 @@ HEADERS  += mapreader.h
 
 FORMS    += mapreader.ui
 
+QMAKE_CXXFLAGS += -fpermissive
 
 
 INCLUDEPATH += /usr/local/include/
@@ -29,3 +30,8 @@ LIBS += -L/usr/local/lib/ \
    -lopencv_features2d \
    -lopencv_objdetect \
    -lopencv_calib3d
+
+OTHER_FILES += \
+    ass3-table.txt \
+    ass3-labeled.pgm \
+    ass3-campus.pgm
