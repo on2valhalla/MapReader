@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+		D7BA7D76DAB5DD13389D6332 = {
+			buildActionMask = 2147483647;
+			files = (
+				);
+			generatedFileNames = (
+				);
+			isa = PBXShellScriptBuildPhase;
+			name = "Qt Qmake";
+			neededFileNames = (
+				);
+			shellPath = "/bin/sh";
+			shellScript = "make\ -C\ /Volumes/Enki_Files/Documents/school/Visual\ Interfaces/assignment3/QT/MapReader\ -f\ \'MapReader.xcodeproj/qt_makeqmake.mak\'";
+		};
+		118FCBAABA162BA17933C789 = {
+			isa = PBXFileReference;
+			name = "main.cpp";
+			path = "main.cpp";
+			refType = 4;
+			sourceTree = "SOURCE_ROOT";
+			lastKnownFileType = "sourcecode.cpp.cpp";
+		};
+		2B093CA6F071B023A473CED0 = {
+			fileRef = "118FCBAABA162BA17933C789";
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					);
+			};
+		};
+		51265E083FAFEB92608A4C36 = {
+			isa = PBXFileReference;
+			name = "mapreader.cpp";
+			path = "mapreader.cpp";
+			refType = 4;
+			sourceTree = "SOURCE_ROOT";
+			lastKnownFileType = "sourcecode.cpp.cpp";
+		};
+		E279ECDFDECB3624650F33CB = {
+			fileRef = "51265E083FAFEB92608A4C36";
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					);
+			};
+		};
+		93554F79F3BF6A5E91842F52 = {
+			isa = PBXFileReference;
+			name = "moc_mapreader.cpp";
+			path = "moc_mapreader.cpp";
+			refType = 4;
+			sourceTree = "SOURCE_ROOT";
+			lastKnownFileType = "sourcecode.cpp.cpp";
+		};
+		65CA31FA1F73ACF962121636 = {
+			fileRef = "93554F79F3BF6A5E91842F52";
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					);
+			};
+		};
+		7DBB4EEE78CD014533977801 = {
+			isa = PBXFileReference;
+			name = "ui_mapreader.h";
+			path = "ui_mapreader.h";
+			refType = 4;
+			sourceTree = "SOURCE_ROOT";
+		};
+		6AB8356B2194BC510B5C96E7 = {
+			isa = PBXFileReference;
+			name = "mapreader.h";
+			path = "mapreader.h";
+			refType = 4;
+			sourceTree = "SOURCE_ROOT";
+		};
+		34DB87D1582A7B83C5F38D38 = {
+			isa = PBXFileReference;
+			name = "MapReader.pro";
+			path = "MapReader.pro";
+			refType = 4;
+			sourceTree = "SOURCE_ROOT";
+		};
+		709EAA2CDCA8FCD680AA2C54 = {
+			isa = PBXFileReference;
+			name = "mapreader.ui";
+			path = "mapreader.ui";
+			refType = 4;
+			sourceTree = "SOURCE_ROOT";
+		};
+		ED459257725A0D01B993FDBC = {
+			fileRef = "709EAA2CDCA8FCD680AA2C54";
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					);
+			};
+		};
+		883D7615C4D2DE3FA1218F12 = {
+			isa = PBXGroup;
+			children = (
+				"6AB8356B2194BC510B5C96E7");
+			name = "Headers";
+			refType = 4;
+			sourceTree = "<Group>";
+		};
+		FB61758D0F0FDA4BA867C3D5 = {
+			isa = PBXGroup;
+			children = (
+				"118FCBAABA162BA17933C789",
+				"51265E083FAFEB92608A4C36");
+			name = "Sources";
+			refType = 4;
+			sourceTree = "<Group>";
+		};
+		EEC299C65D5017EB9DD513B0 = {
+			isa = PBXGroup;
+			children = (
+				"709EAA2CDCA8FCD680AA2C54");
+			name = "Sources [UIC]";
+			refType = 4;
+			sourceTree = "<Group>";
+		};
+		7CABE3C80E79AD2B307756D2 = {
+			isa = PBXGroup;
+			children = (
+				"34DB87D1582A7B83C5F38D38");
+			name = "Sources [qmake]";
+			refType = 4;
+			sourceTree = "<Group>";
+		};
+		46E892BBB6BB6952967E0561 = {
+			isa = PBXGroup;
+			children = (
+				"93554F79F3BF6A5E91842F52",
+				"7DBB4EEE78CD014533977801");
+			name = "Temporary Sources";
+			refType = 4;
+			sourceTree = "<Group>";
+		};
+		A0A52A2ADF7A1E2A99738674 = {
+			buildActionMask = 2147483647;
+			files = (
+				);
+			generatedFileNames = (
+				"2B093CA6F071B023A473CED0",
+				"E279ECDFDECB3624650F33CB",
+				"65CA31FA1F73ACF962121636");
+			isa = PBXShellScriptBuildPhase;
+			name = "Qt Preprocessors";
+			neededFileNames = (
+				"2B093CA6F071B023A473CED0",
+				"E279ECDFDECB3624650F33CB",
+				"65CA31FA1F73ACF962121636");
+			shellPath = "/bin/sh";
+			shellScript = "make\ -C\ /Volumes/Enki_Files/Documents/school/Visual\ Interfaces/assignment3/QT/MapReader\ -f\ \'MapReader.xcodeproj/qt_preprocess.mak\'";
+		};
+		C29B8785722055ED95EF7B57 = {
+			buildActionMask = 2147483647;
+			files = (
+				"2B093CA6F071B023A473CED0",
+				"E279ECDFDECB3624650F33CB",
+				"65CA31FA1F73ACF962121636");
+			isa = PBXSourcesBuildPhase;
+			name = "Build Sources";
+		};
+		6657E5C12ADFA1502DD63F0C = {
+			isa = PBXFrameworkReference;
+			name = "QtGui.framework";
+			path = "/opt/local/Library/Frameworks/QtGui.framework";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		BC793246637FF51827EA4C5F = {
+			fileRef = "6657E5C12ADFA1502DD63F0C";
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		98147451093A70FCFFA99C13 = {
+			isa = PBXFrameworkReference;
+			name = "QtCore.framework";
+			path = "/opt/local/Library/Frameworks/QtCore.framework";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		14030FB267B619C665EA0C8B = {
+			fileRef = "98147451093A70FCFFA99C13";
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		ED1E82605DD74B483AF3C982 = {
+			children = (
+				"6657E5C12ADFA1502DD63F0C",
+				"98147451093A70FCFFA99C13");
+			isa = PBXGroup;
+			name = "External Frameworks and Libraries";
+			path = "";
+			refType = 4;
+			sourceTree = "<Group>";
+		};
+		2A1043669E6E5A7426EA502A = {
+			buildActionMask = 2147483647;
+			files = (
+				"BC793246637FF51827EA4C5F",
+				"14030FB267B619C665EA0C8B");
+			isa = PBXFrameworksBuildPhase;
+			name = "Frameworks & Libraries";
+		};
+		3787F99312C85FF0073FD7BA = {
+			buildActionMask = 2147483647;
+			files = (
+			);
+			isa = PBXResourcesBuildPhase;
+			name = "Bundle Resources";
+		};
+		05596AB53D8D521C69802C27 = {
+			children = (
+				"FB61758D0F0FDA4BA867C3D5",
+				"46E892BBB6BB6952967E0561",
+				"883D7615C4D2DE3FA1218F12",
+				"7CABE3C80E79AD2B307756D2",
+				"EEC299C65D5017EB9DD513B0",
+				"ED1E82605DD74B483AF3C982");
+			isa = PBXGroup;
+			name = "MapReader";
+			path = "";
+			refType = 4;
+			sourceTree = "<Group>";
+		};
+		AC13B13AD3ABB0A7341187EB = {
+			isa = PBXFileReference;
+			explicitFileType = "wrapper.application";
+			path = "MapReader.app";
+			refType = 3;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		068F80C7519D0528FB08E821 = {
+			children = (
+				"AC13B13AD3ABB0A7341187EB");
+			isa = PBXGroup;
+			name = "Products";
+			refType = 4;
+		};
+		D0F8C02B5C7ABA5EADD87199 = {
+			buildPhases = (
+				"D7BA7D76DAB5DD13389D6332",
+				"A0A52A2ADF7A1E2A99738674",
+				"C29B8785722055ED95EF7B57",
+				"2A1043669E6E5A7426EA502A",
+				"3787F99312C85FF0073FD7BA");
+			buildSettings = {
+				CC = "/usr/bin/clang";
+				CPLUSPLUS = "/usr/bin/clang++";
+				LEXFLAGS = "";
+				YACCFLAGS = "-d";
+				OTHER_REZFLAGS = "";
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "";
+				PREBINDING = NO;
+				INFOPLIST_FILE = "Info.plist";
+				BUILD_ROOT = "/Volumes/Enki_Files/Documents/school/Visual Interfaces/assignment3/QT/MapReader";
+				OTHER_LDFLAGS = (
+						"-headerpad_max_install_names",
+						"-F/opt/local/Library/Frameworks",
+						"-F/opt/local/lib",
+						"-F/opt/local/Library/Frameworks",
+						"-F/opt/local/lib",
+						"-L/opt/local/lib");
+				DYLIB_CURRENT_VERSION = "1.0.0";
+				DYLIB_COMPATIBILITY_VERSION = "1.0";
+				MACOSX_DEPLOYMENT_TARGET = "10.8";
+				PRODUCT_NAME = "MapReader";
+			};
+			conditionalBuildSettings = {
+			};
+			dependencies = (
+				);
+			productReference = "AC13B13AD3ABB0A7341187EB";
+			shouldUseHeadermap = 1;
+			buildConfigurationList = 17B3380A4D6A7D415E7F2E1E;
+			isa = PBXNativeTarget;
+			productType = "com.apple.product-type.application";
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist SYSTEM \"file://localhost/System/Library/DTDs/PropertyList.dtd\">
+<plist version=\"0.9\">
+<dict>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>CFBundleIconFile</key>
+	<string></string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+ 	<key>CFBundleGetInfoString</key>
+	<string>Created by Qt/QMake</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleExecutable</key>
+	<string>MapReader</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.yourcompany.MapReader</string>
+	<key>NOTE</key>
+	<string>This file was generated by Qt/QMake.</string>
+</dict>
+</plist>
+";
+			name = "MapReader";
+			productName = "MapReader";
+			startupPath = "<<ProjectDirectory>>";
+		};
+		4B72B24813252891014BCF61 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = "NO";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = "YES";
+				GCC_OPTIMIZATION_LEVEL = "0";
+				PRODUCT_NAME = "MapReader";
+				HEADER_SEARCH_PATHS = (
+					".",
+					"/opt/local/Library/Frameworks/QtCore.framework/Versions/4/Headers",
+					"/opt/local/Library/Frameworks/QtGui.framework/Versions/4/Headers",
+					"/opt/local/Library/Frameworks/QtGui.framework/Versions/4/Headers",
+					"/opt/local/Library/Frameworks/QtCore.framework/Versions/4/Headers",
+					"/opt/local/include",
+					".",
+					"/usr/local/include",
+					"/System/Library/Frameworks/CarbonCore.framework/Headers",
+					"/opt/local/share/qt4/mkspecs/macx-xcode");
+				LIBRARY_SEARCH_PATHS = (
+					"/opt/local/lib",
+					"/opt/local/Library/Frameworks");
+				FRAMEWORK_SEARCH_PATHS = (
+					"/opt/local/Library/Frameworks",
+					"/opt/local/lib",
+					"/opt/local/Library/Frameworks",
+					"/opt/local/lib",
+					"/opt/local/Library/Frameworks",
+					"/opt/local/lib");
+				INFOPLIST_FILE = "Info.plist";
+				OTHER_CFLAGS = (
+					"-pipe",
+					"-O2",
+					"-Wall",
+					"-W",
+					"-DQT_NO_DEBUG",
+					"-DQT_GUI_LIB",
+					"-DQT_CORE_LIB",
+					"-DQT_SHARED");
+				OTHER_CPLUSPLUSFLAGS = (
+					"-pipe",
+					"-O2",
+					"-Wall",
+					"-W",
+					"-DQT_NO_DEBUG",
+					"-DQT_GUI_LIB",
+					"-DQT_CORE_LIB",
+					"-DQT_SHARED");
+				OTHER_LDFLAGS = (
+						"-headerpad_max_install_names",
+						"-F/opt/local/Library/Frameworks",
+						"-F/opt/local/lib",
+						"-F/opt/local/Library/Frameworks",
+						"-F/opt/local/lib",
+						"-L/opt/local/lib");
+			};
+			name = "Debug";
+		};
+		BEC09A62E69C3553534FF35E = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = "NO";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = "YES";
+				GCC_OPTIMIZATION_LEVEL = "0";
+				PRODUCT_NAME = "MapReader";
+				PRODUCT_NAME = "MapReader";
+			};
+			name = "Debug";
+		};
+		2C641C3335766025DD51B7BD = {
+			buildRules = (
+				);
+			buildSettings = {
+				COPY_PHASE_STRIP = "NO";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = "YES";
+				GCC_OPTIMIZATION_LEVEL = "0";
+				PRODUCT_NAME = "MapReader";
+			};
+			isa = "PBXBuildStyle";
+			name = "Debug";
+		};
+		D70590BEB531B51029F711BB = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = "YES";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = "NO";
+				PRODUCT_NAME = "MapReader";
+				HEADER_SEARCH_PATHS = (
+					".",
+					"/opt/local/Library/Frameworks/QtCore.framework/Versions/4/Headers",
+					"/opt/local/Library/Frameworks/QtGui.framework/Versions/4/Headers",
+					"/opt/local/Library/Frameworks/QtGui.framework/Versions/4/Headers",
+					"/opt/local/Library/Frameworks/QtCore.framework/Versions/4/Headers",
+					"/opt/local/include",
+					".",
+					"/usr/local/include",
+					"/System/Library/Frameworks/CarbonCore.framework/Headers",
+					"/opt/local/share/qt4/mkspecs/macx-xcode");
+				LIBRARY_SEARCH_PATHS = (
+					"/opt/local/lib",
+					"/opt/local/Library/Frameworks");
+				FRAMEWORK_SEARCH_PATHS = (
+					"/opt/local/Library/Frameworks",
+					"/opt/local/lib",
+					"/opt/local/Library/Frameworks",
+					"/opt/local/lib",
+					"/opt/local/Library/Frameworks",
+					"/opt/local/lib");
+				INFOPLIST_FILE = "Info.plist";
+				OTHER_CFLAGS = (
+					"-pipe",
+					"-O2",
+					"-Wall",
+					"-W",
+					"-DQT_NO_DEBUG",
+					"-DQT_GUI_LIB",
+					"-DQT_CORE_LIB",
+					"-DQT_SHARED");
+				OTHER_CPLUSPLUSFLAGS = (
+					"-pipe",
+					"-O2",
+					"-Wall",
+					"-W",
+					"-DQT_NO_DEBUG",
+					"-DQT_GUI_LIB",
+					"-DQT_CORE_LIB",
+					"-DQT_SHARED");
+				OTHER_LDFLAGS = (
+						"-headerpad_max_install_names",
+						"-F/opt/local/Library/Frameworks",
+						"-F/opt/local/lib",
+						"-F/opt/local/Library/Frameworks",
+						"-F/opt/local/lib",
+						"-L/opt/local/lib");
+			};
+			name = "Release";
+		};
+		8C7174830A1E4DCBA0332EC1 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = "YES";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = "NO";
+				PRODUCT_NAME = "MapReader";
+				PRODUCT_NAME = "MapReader";
+			};
+			name = "Release";
+		};
+		26DE8D2AEA4B3714B41E931F = {
+			buildRules = (
+				);
+			buildSettings = {
+				COPY_PHASE_STRIP = "YES";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = "NO";
+				PRODUCT_NAME = "MapReader";
+			};
+			isa = "PBXBuildStyle";
+			name = "Release";
+		};
+		CC82A9286117DFED018F418F = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				"4B72B24813252891014BCF61",
+				"D70590BEB531B51029F711BB");
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationIsName = "Release";
+		};
+		17B3380A4D6A7D415E7F2E1E = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				"BEC09A62E69C3553534FF35E",
+				"8C7174830A1E4DCBA0332EC1");
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationIsName = "Release";
+		};
+		91B15E841AA80083484172DE = {
+			buildStyles = (
+				"2C641C3335766025DD51B7BD",
+				"26DE8D2AEA4B3714B41E931F");
+			hasScannedForEncodings = 1;
+			isa = PBXProject;
+			mainGroup = "05596AB53D8D521C69802C27";
+			buildConfigurationList = "CC82A9286117DFED018F418F";
+			projectDirPath = "";
+			targets = (
+				"D0F8C02B5C7ABA5EADD87199");
+		};
+	};
+	rootObject = "91B15E841AA80083484172DE";
+}
