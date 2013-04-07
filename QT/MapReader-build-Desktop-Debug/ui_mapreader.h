@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mapreader.ui'
 **
-** Created: Sat Apr 6 10:42:36 2013
+** Created: Sun Apr 7 16:44:46 2013
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -37,16 +37,16 @@ public:
     {
         if (MapReader->objectName().isEmpty())
             MapReader->setObjectName(QString::fromUtf8("MapReader"));
-        MapReader->resize(553, 959);
+        MapReader->resize(544, 793);
         centralWidget = new QWidget(MapReader);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         lblImage = new QLabel(centralWidget);
         lblImage->setObjectName(QString::fromUtf8("lblImage"));
-        lblImage->setGeometry(QRect(21, 15, 511, 871));
+        lblImage->setGeometry(QRect(21, 15, 501, 711));
         MapReader->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MapReader);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 553, 22));
+        menuBar->setGeometry(QRect(0, 0, 544, 22));
         MapReader->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MapReader);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
