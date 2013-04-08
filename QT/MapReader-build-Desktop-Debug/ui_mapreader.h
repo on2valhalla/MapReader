@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mapreader.ui'
 **
-** Created: Sun Apr 7 16:44:46 2013
+** Created: Mon Apr 8 11:23:43 2013
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -15,12 +15,12 @@
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
 #include <QtGui/QHeaderView>
-#include <QtGui/QLabel>
 #include <QtGui/QMainWindow>
 #include <QtGui/QMenuBar>
 #include <QtGui/QStatusBar>
 #include <QtGui/QToolBar>
 #include <QtGui/QWidget>
+#include "clicklabel.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -28,7 +28,7 @@ class Ui_MapReader
 {
 public:
     QWidget *centralWidget;
-    QLabel *lblImage;
+    ClickableLabel *lblImage;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -37,16 +37,22 @@ public:
     {
         if (MapReader->objectName().isEmpty())
             MapReader->setObjectName(QString::fromUtf8("MapReader"));
-        MapReader->resize(544, 793);
+        MapReader->resize(321, 571);
         centralWidget = new QWidget(MapReader);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
-        lblImage = new QLabel(centralWidget);
+        lblImage = new ClickableLabel(centralWidget);
         lblImage->setObjectName(QString::fromUtf8("lblImage"));
-        lblImage->setGeometry(QRect(21, 15, 501, 711));
+        lblImage->setGeometry(QRect(21, 15, 275, 495));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(lblImage->sizePolicy().hasHeightForWidth());
+        lblImage->setSizePolicy(sizePolicy);
+        lblImage->setMouseTracking(true);
         MapReader->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MapReader);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 544, 22));
+        menuBar->setGeometry(QRect(0, 0, 321, 22));
         MapReader->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MapReader);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -63,7 +69,7 @@ public:
     void retranslateUi(QMainWindow *MapReader)
     {
         MapReader->setWindowTitle(QApplication::translate("MapReader", "MapReader", 0, QApplication::UnicodeUTF8));
-        lblImage->setText(QApplication::translate("MapReader", "TextLabel", 0, QApplication::UnicodeUTF8));
+        lblImage->setText(QString());
     } // retranslateUi
 
 };

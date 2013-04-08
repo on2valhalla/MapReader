@@ -6,6 +6,10 @@
 
 QT       += core gui
 
+#QMAKE_CXX = /opt/local/bin/g++
+
+QMAKE_CXXFLAGS = -fpermissive -std=c++11
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = MapReader
@@ -15,11 +19,11 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mapreader.cpp
 
-HEADERS  += mapreader.h
+HEADERS  += mapreader.h \
+    clicklabel.h
 
 FORMS    += mapreader.ui
 
-QMAKE_CXXFLAGS += -fpermissive
 
 
 INCLUDEPATH += /usr/local/include/

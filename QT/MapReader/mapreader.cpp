@@ -8,6 +8,7 @@ MapReader::MapReader(QWidget *parent) :
 	ui(new Ui::MapReader)
 {
 	ui->setupUi(this);
+	ui->lblImage->setParent(this);
 
 	campusImage = imread("../../../../../ass3-campus.pgm", CV_LOAD_IMAGE_GRAYSCALE);
 	campusLabeled = imread("../../../../../ass3-labeled.pgm", CV_LOAD_IMAGE_GRAYSCALE);
@@ -37,8 +38,8 @@ MapReader::MapReader(QWidget *parent) :
 
 	printBinaryPairs();
 
-
-	displayMat(wRects);
+	cvtColor(campusImage, campusImage, CV_GRAY2BGR);
+	displayMat(campusImage);
 }
 
 MapReader::~MapReader()
@@ -364,7 +365,8 @@ bool MapReader::near(const Building &s, const Building &g)
 			|| abs(g.MBR.y - s.MBR.y) < nearDistance ) )
 		return true;
 
-	if(abs(g.centerOfMass.y - s.centerOfMass.y) + abs(g.centerOfMass.x - s.centerOfMass.x) > 8 * defaultDistance)
+	if(abs(g.centerOfMass.y - s.centerOfMass.y) 
+		+ abs(g.centerOfMass.x - s.centerOfMass.x) > 8 * defaultDistance)
 		return false;
 
 	for(uchar i = 0; i < s.contour.size(); i++)
@@ -507,7 +509,7 @@ void MapReader::findRelations()
 }
 
 
-void MapReader::printRelations(vector< vector< bool > > rel)
+void MapReader::printRelations(const vector< vector< bool > > &rel)
 {
 	// COMPLETE RELATIONS
 	cout << "       ";
@@ -589,11 +591,197 @@ void MapReader::printBinaryPairs()
 
 
 
-vector<Point> MapReader::findCloud(Point pt)
+
+// void printFeatures(const vector< vector< int > > &features)
+// {
+//     QDebug debugMessage(QtDebugMsg);
+//     for(int i = 0; i < features.size(); i++)
+//     {
+//         debugMessage << i << ":\n";
+//         for(int j = 0; j < features[i].size(); j++)
+//         {
+//             debugMessage << "\t" << features[i][j];
+//         }
+//         debugMessage << "\n";
+//     }
+// }
+
+
+vector<Point> MapReader::findCloud(const Point &pt, 
+				const vector<unordered_set<int> > &features)
 {
-	Building buildPt;
+	vector<Point> cloud;
+	queue<Point> children;
+	unordered_set<Point, hash<Point> > seen;
+	Point curPoint;
+	int count = 1;
+
+
+	children.push(pt);
+
+	while(!children.empty())
+	{
+		curPoint = children.front();
+		children.pop();
+        if(seen.find(curPoint) != seen.end())
+			continue;
+
+		cloud.push_back(curPoint);
+		seen.insert(curPoint);
+		bool brk = false;
+
+		Building buildPt(curPoint, avgArea);
+
+        // printFeatures(features);
+        bool feature, contained;
+
+		for(uchar i = 0; i < buildings.size(); i++)
+		{
+			if(features[0].size() > 0)
+			{
+				feature = near( buildings[i], buildPt );
+				contained = features[0].find(i+1) != features[0].end();
+				if( (feature && !contained) || (!feature && contained) )
+				{
+					cloud.pop_back();
+					brk = true;
+					break;
+				}
+			}
+				
+			if(features[1].size() > 0)
+			{
+				feature = north( buildings[i], buildPt );
+				contained = features[1].find(i+1) != features[1].end();
+				if( (feature && !contained) || (!feature && contained) )
+				{
+					cloud.pop_back();
+					brk = true;
+					break;
+				}
+			}
+
+			if(features[2].size() > 0)
+			{
+				feature = south( buildings[i], buildPt );
+				contained = features[2].find(i+1) != features[2].end();
+				if( (feature && !contained) || (!feature && contained) )
+				{
+					cloud.pop_back();
+					brk = true;
+					break;
+				}
+			}
+			
+			if(features[3].size() > 0)
+			{	
+				feature = east( buildings[i], buildPt );
+				contained = features[3].find(i+1) != features[3].end();
+				if( (feature && !contained) || (!feature && contained) )
+				{
+					cloud.pop_back();
+					brk = true;
+					break;
+				}
+			}
+				
+			if(features[4].size() > 0)
+			{
+				feature = west( buildings[i], buildPt );
+				contained = features[4].find(i+1) != features[4].end();
+				if( (feature && !contained) || (!feature && contained) )
+				{
+					cloud.pop_back();
+					brk = true;
+					break;
+				}
+			}
+		}
+
+		if(brk)
+			continue;
+
+		// Get Children
+		Point n = Point(curPoint.x, curPoint.y-1),
+			s = Point(curPoint.x, curPoint.y+1),
+			e = Point(curPoint.x+1, curPoint.y),
+            w = Point(curPoint.x-1, curPoint.y);
+        if(seen.find(w) == seen.end() && curPoint.x != 0)
+			children.push(w);
+        if(seen.find(e) == seen.end() && curPoint.x != campusImage.cols)
+            children.push(e);
+        if(seen.find(n) == seen.end() && curPoint.y != 0)
+			children.push(n);
+        if(seen.find(s) == seen.end() && curPoint.y != campusImage.rows)
+			children.push(s);
+
+		// qDebug() << count++;
+
+	}
+
+	return cloud;
 }
 
+
+void MapReader::clicked(QMouseEvent *e)
+{
+	// cout << e->x() << "," << e->y() << endl;
+	Point pt(e->x(), e->y());
+    Building buildPt(pt, minArea);
+
+	unordered_set<int> nearLoc, northLoc, southLoc, eastLoc, westLoc;
+
+
+	// qDebug() << "here";
+	// for(uchar i = 0; i < buildings.size(); i++)
+	// {
+	// 	// qDebug() <<(Building) buildings[i] << endl;
+	// 	if( near( buildings[i], buildPt ) )
+	// 		qDebug() << "Near " << buildings[i].name.c_str();
+	// }
+	// qDebug()  << "   ---";
+	
+	for(uchar i = 0; i < buildings.size(); i++)
+	{
+		if( near( buildings[i], buildPt ) )
+			nearLoc.insert(i+1);
+		if( north( buildings[i], buildPt ) )
+			northLoc.insert(i+1);
+		if( south( buildings[i], buildPt ) )
+			southLoc.insert(i+1);
+		if( east( buildings[i], buildPt ) )
+			eastLoc.insert(i+1);
+		if( west( buildings[i], buildPt ) )
+			westLoc.insert(i+1);
+	}
+
+	vector< unordered_set< int > > features;
+	features.push_back(nearLoc);
+	features.push_back(northLoc);
+	features.push_back(southLoc);
+	features.push_back(eastLoc);
+	features.push_back(westLoc);
+
+	// printFeatures(features);
+
+     vector<Point> cloud = findCloud(pt, features);
+
+     drawCloud(cloud);
+}
+
+void MapReader::drawCloud(vector<Point> cloud)
+{
+	Mat cloudImage = campusImage.clone();
+	for (std::vector<Point>::iterator i = cloud.begin(); i != cloud.end(); ++i)
+	{
+        if(cloudImage.at<Vec3b>(*i) == Vec3b(255, 255, 255))
+			cloudImage.at<Vec3b>(*i) = Vec3b(0,100,0);
+		else
+			cloudImage.at<Vec3b>(*i) += Vec3b(0,100,0);
+		// qDebug() << (*i).x << ", " << (*i).y;
+	}
+	displayMat(cloudImage);
+}
 
 
 

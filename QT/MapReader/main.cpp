@@ -1,4 +1,5 @@
 #include "mapreader.h"
+#include "clicklabel.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])

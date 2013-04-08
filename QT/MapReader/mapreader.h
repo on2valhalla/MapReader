@@ -2,12 +2,16 @@
 #define MAPREADER_H
 
 #include <QMainWindow>
+#include <QMouseEvent>
+#include <QDebug>
 
 #include <string>
 #include <iostream>
 #include <vector>
+#include <queue>
 #include <fstream>
 #include <algorithm>
+#include <unordered_set>
 
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
@@ -29,6 +33,23 @@ struct Building {
 	Rect MBR;
 	string description;
 
+	Building()
+	{
+
+	}
+
+	Building(Point pt, int area)
+	{
+		this->number = -1;
+		this->name = "";
+		this->contour.push_back(pt);
+		this->mom = moments(Mat(contour));
+		this->mom.m00 = area;
+		this->centerOfMass = pt;
+		this->MBR = Rect(pt, Size(1,1));
+		this->description = "";
+	}
+
 	friend ostream& operator<< (ostream &o, const Building &b)
 	{
 		o << (int)b.number << " (" << b.name << "): "
@@ -38,7 +59,37 @@ struct Building {
 		  << "]\n  Description:  " << b.description;
 		return o;
 	}
+
+	friend QDebug operator<< (QDebug q, const Building &b)
+	{
+		q << (int)b.number << " (" << b.name.c_str() << "): "
+		  << "CoM: (" << b.centerOfMass.y << ", " 
+		  << b.centerOfMass.x << ")   Area: " << b.mom.m00
+		  << "   Bound UL: [" << b.MBR.x << ", " << b.MBR.y
+		  << "]  LR: [" << b.MBR.x + b.MBR.width << ", " << b.MBR.y +b.MBR.height
+		  << "]\n  Description:  " << b.description.c_str();
+		return q;
+	}
 };
+
+
+
+namespace std 
+{
+	// Hash combination emulates from Boost library
+	template<>
+	class hash<Point> {
+	public:
+		size_t operator()(const Point &pt) const
+		{
+			hash< int > iHash;
+			size_t hash = iHash(pt.x);
+			hash ^= iHash(pt.y)
+			+ 0x9e3779b9 + (hash << 6) + (hash >> 2);
+			return hash;
+		}
+	};
+}
 
 class MapReader : public QMainWindow
 {
@@ -49,13 +100,19 @@ public:
 	~MapReader();
 	
 	void displayMat(const cv::Mat& image);
+	void getNames(string fileName);
+
 	void processFeatures(const cv::Mat& image, cv::Mat& wRects);
 	void describeBuildings();
-	void getNames(string fileName);
+
 	void findRelations();
-	void printRelations(vector< vector< bool > > rel);
+	void printRelations(const vector< vector< bool > > &rel);
 	void printBinaryPairs();
-	vector<Point> findCloud(Point pt);
+
+	vector<Point> findCloud(const Point &pt, const vector<unordered_set<int> > &features);
+	void drawCloud(vector<Point> cloud);
+
+    void clicked(QMouseEvent *e);
 
 	bool north(const Building &s, const Building &g);
 	bool south(const Building &s, const Building &g);
@@ -68,11 +125,11 @@ private:
 	Mat campusImage;
 	Mat campusLabeled;
 	vector<Building> buildings;
-    vector< vector< bool > > northR;
-    vector< vector< bool > > southR;
-    vector< vector< bool > > eastR;
-    vector< vector< bool > > westR;
-    vector< vector< bool > > nearR;
+	vector< vector< bool > > northR;
+	vector< vector< bool > > southR;
+	vector< vector< bool > > eastR;
+	vector< vector< bool > > westR;
+	vector< vector< bool > > nearR;
 	int minArea, maxArea, avgArea, areaRange;
 };
 
