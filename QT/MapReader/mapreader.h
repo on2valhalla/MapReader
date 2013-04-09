@@ -115,9 +115,12 @@ public:
 	void printRelations();
 	void printBinaryPairs();
 
-	vector<Point> findCloud(const Point &pt, const vector<unordered_set<int> > &features);
+	// void printFeatures(const Point &pt, const vector< unordered_set< int > > &features);
+	// vector<Point> findCloud(const Point &pt, const vector<unordered_set<int> > &features);
+	void retrMinFeatures(Building &buildPt);
+	void printFeatures(const Building &buildPt);
+	vector<Point> findCloud(const Building &buildPt);
 	void drawCloud(vector<Point> cloud);
-	void printFeatures(const Point &pt, const vector< unordered_set< int > > &features);
 
     void clicked(QMouseEvent *e);
 
