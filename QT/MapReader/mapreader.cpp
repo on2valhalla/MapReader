@@ -16,14 +16,14 @@ MapReader::MapReader(QWidget *parent) :
 	getNames("../../../../../ass3-table.txt");
 
 
-	// namedWindow("Map");
-	// imshow("Map", campusImage);
 
 	// cout << campusLabeled.rows << " " << campusLabeled.cols << " "
 	// 	 << (int)campusLabeled.at<uchar>(40,7) << endl;
 	Mat wRects(campusImage.size(), CV_8UC1, Scalar(0));
 
 	processFeatures(campusLabeled, wRects);
+	namedWindow("Map");
+	imshow("Map", wRects);
 
 	describeBuildings();
 
@@ -40,6 +40,9 @@ MapReader::MapReader(QWidget *parent) :
 
 	cvtColor(campusImage, campusImage, CV_GRAY2BGR);
 	displayMat(campusImage);
+
+	ready = true;
+	takeinput = false;
 }
 
 MapReader::~MapReader()
@@ -127,8 +130,8 @@ void MapReader::describeBuildings()
 	for( uchar i = 0; i < buildings.size(); i++)
 	{
 		Building &b = buildings[i];
-		// b.description = "the ";
-		b.description = "";
+		b.description = "the ";
+		// b.description = "";
 		int centerx = b.MBR.x + b.MBR.width/2, centery = b.MBR.y + b.MBR.height/2;
 
 		//FIND SHAPE DESCRIPTORS
@@ -750,237 +753,90 @@ void MapReader::printBinaryPairs()
 
 
 
-// void MapReader::printFeatures(const Point &pt, const vector< unordered_set< int > > &features)
-// {
-// 	QDebug debugMessage(QtDebugMsg);
-// 	uchar i = 0;
-
-// 	debugMessage << "(" << pt.x << ", " << pt.y << ") is ";
-	
-// 	if(features[0].size() > 0)
-// 		debugMessage << "NEAR ";
-// 		for(auto i = features[0].begin(); i != features[0].end(); i++)
-// 			debugMessage << buildings[*i].name.c_str() << ", ";
-
-
-// 	if(i > 0)
-// 		debugMessage << "and ";
-// 	i=0;
-	
-// 	if(features[1].size() > 0)
-// 		debugMessage << "NORTH of ";
-// 	for(auto i = features[1].begin(); i != features[1].end(); i++)
-// 		debugMessage << buildings[*i].name.c_str() << ", ";
-
-
-// 	if(i > 0)
-// 		debugMessage << "and ";
-// 	i=0;
-	
-// 	if(features[2].size() > 0)
-// 		debugMessage << "SOUTH of ";
-// 	for(auto i = features[2].begin(); i != features[2].end(); i++)
-// 		debugMessage << buildings[*i].name.c_str() << ", ";
-
-
-// 	if(i > 0)
-// 		debugMessage << "and ";
-// 	i=0;
-	
-// 	if(features[3].size() > 0)
-// 		debugMessage << "EAST of ";
-// 	for(auto i = features[3].begin(); i != features[3].end(); i++)
-// 		debugMessage << buildings[*i].name.c_str() << ", ";
-
-
-// 	if(i > 0)
-// 		debugMessage << "and ";
-// 	i=0;
-	
-// 	if(features[4].size() > 0)
-// 		debugMessage << "WEST of ";
-// 	for(auto i = features[4].begin(); i != features[4].end(); i++)
-// 		debugMessage << buildings[*i].name.c_str() << ", ";
-// }
-
-
-// vector<Point> MapReader::findCloud(const Point &pt, 
-// 				const vector<unordered_set<int> > &features)
-// {
-// 	vector<Point> cloud;
-// 	queue<Point> children;
-// 	unordered_set<Point, hash<Point> > seen;
-// 	Point curPoint;
-// 	int count = 1;
-
-
-// 	children.push(pt);
-
-// 	while(!children.empty())
-// 	{
-// 		curPoint = children.front();
-// 		children.pop();
-// 		if(seen.find(curPoint) != seen.end())
-// 			continue;
-
-// 		cloud.push_back(curPoint);
-// 		seen.insert(curPoint);
-// 		bool brk = false;
-
-// 		Building buildPt(curPoint, minArea);
-
-// 		// printFeatures(features);
-// 		bool feature, contained;
-
-// 		for(uchar i = 0; i < buildings.size(); i++)
-// 		{
-// 			if(features[0].size() > 0)
-// 			{
-// 				feature = near( buildings[i], buildPt );
-// 				contained = features[0].find(i) != features[0].end();
-// 				if( (feature && !contained) || (!feature && contained) )
-// 				{
-// 					cloud.pop_back();
-// 					brk = true;
-// 					break;
-// 				}
-// 			}
-				
-// 			if(features[1].size() > 0)
-// 			{
-// 				feature = north( buildings[i], buildPt );
-// 				contained = features[1].find(i) != features[1].end();
-// 				if( (feature && !contained) || (!feature && contained) )
-// 				{
-// 					cloud.pop_back();
-// 					brk = true;
-// 					break;
-// 				}
-// 			}
-
-// 			if(features[2].size() > 0)
-// 			{
-// 				feature = south( buildings[i], buildPt );
-// 				contained = features[2].find(i) != features[2].end();
-// 				if( (feature && !contained) || (!feature && contained) )
-// 				{
-// 					cloud.pop_back();
-// 					brk = true;
-// 					break;
-// 				}
-// 			}
-			
-// 			if(features[3].size() > 0)
-// 			{	
-// 				feature = east( buildings[i], buildPt );
-// 				contained = features[3].find(i) != features[3].end();
-// 				if( (feature && !contained) || (!feature && contained) )
-// 				{
-// 					cloud.pop_back();
-// 					brk = true;
-// 					break;
-// 				}
-// 			}
-				
-// 			if(features[4].size() > 0)
-// 			{
-// 				feature = west( buildings[i], buildPt );
-// 				contained = features[4].find(i) != features[4].end();
-// 				if( (feature && !contained) || (!feature && contained) )
-// 				{
-// 					cloud.pop_back();
-// 					brk = true;
-// 					break;
-// 				}
-// 			}
-// 		}
-
-// 		if(brk)
-// 			continue;
-
-// 		// Get Children
-// 		Point n = Point(curPoint.x, curPoint.y-1),
-// 			s = Point(curPoint.x, curPoint.y+1),
-// 			e = Point(curPoint.x+1, curPoint.y),
-// 			w = Point(curPoint.x-1, curPoint.y);
-// 		if(seen.find(w) == seen.end() && curPoint.x != 0)
-// 			children.push(w);
-// 		if(seen.find(e) == seen.end() && curPoint.x != campusImage.cols)
-// 			children.push(e);
-// 		if(seen.find(n) == seen.end() && curPoint.y != 0)
-// 			children.push(n);
-// 		if(seen.find(s) == seen.end() && curPoint.y != campusImage.rows)
-// 			children.push(s);
-
-// 		count++;
-
-// 	}
-
-// 	return cloud;
-// }
 
 
 
 void MapReader::printFeatures(const Building &buildPt)
 {
-	QDebug debugMessage(QtDebugMsg);
+	QTextStream qout(stdout);
 	bool last = true;
+	string join = "";
 
-	debugMessage << "(" << buildPt.centerOfMass.x 
-		<< ", " << buildPt.centerOfMass.y << ") is ";
+	// qout << "(" << buildPt.centerOfMass.x 
+	// 	<< ", " << buildPt.centerOfMass.y << ") is ";
 	
-	if(buildPt.north.size() > 0)
-		debugMessage << "NORTH of ";
-	else
-		last = false;
 	for(auto i = buildPt.north.begin(); i != buildPt.north.end(); i++)
-		debugMessage << buildings[*i].name.c_str() << ", ";
+		// qout << "(" << buildings[*i].description.c_str() 
+		// 	<< ")(called " << buildings[*i].name.c_str() << ") ";
+		qout << "(" << buildings[*i].description.c_str() << ")";
 
-
-	if(last)
-		debugMessage << "and ";
-	last = true;	
-	if(buildPt.south.size() > 0)
-		debugMessage << "SOUTH of ";
+	if(buildPt.north.size() > 1)
+		qout << join.c_str() << "are NORTH of ";
+	else if(buildPt.north.size() == 1)
+		qout << join.c_str() << "is NORTH of ";
 	else
 		last = false;
+
+	if(last)
+		join =  "and ";
+	last = true;	
 	for(auto i = buildPt.south.begin(); i != buildPt.south.end(); i++)
-		debugMessage << buildings[*i].name.c_str() << ", ";
+		// qout << "(" << buildings[*i].description.c_str() 
+		// 	<< ")(called " << buildings[*i].name.c_str() << "), ";
+		qout << "(" << buildings[*i].description.c_str() << ")";
 
-
-	if(last)
-		debugMessage << "and ";
-	last = true;	
-	if(buildPt.east.size() > 0)
-		debugMessage << "EAST of ";
+	if(buildPt.south.size() > 1)
+		qout << join.c_str() << "are SOUTH of ";
+	else if(buildPt.south.size() == 1)
+		qout << join.c_str() << "is SOUTH of ";
 	else
 		last = false;
+
+	if(last)
+		join = "and ";
+	last = true;	
 	for(auto i = buildPt.east.begin(); i != buildPt.east.end(); i++)
-		debugMessage << buildings[*i].name.c_str() << ", ";
+		// qout << "(" << buildings[*i].description.c_str() 
+		// 	<< ")(called " << buildings[*i].name.c_str() << "), ";
+		qout << "(" << buildings[*i].description.c_str() << ")";
 
+	if(buildPt.east.size() > 1)
+		qout << join.c_str() << "are EAST of ";
+	else if(buildPt.east.size() == 1)
+		qout << join.c_str() << "is EAST of ";
+	else
+		last = false;
 
 	if(last)
-		debugMessage << "and ";
+		join = "and ";
 	last = true;	
-	if(buildPt.west.size() > 0)
-		debugMessage << "WEST of ";
+	for(auto i = buildPt.west.begin(); i != buildPt.west.end(); i++)
+		// qout << "(" << buildings[*i].description.c_str() 
+		// 	<< ")(called " << buildings[*i].name.c_str() << "), ";
+		qout << "(" << buildings[*i].description.c_str() << ")";
+
+	if(buildPt.west.size() > 1)
+		qout << join.c_str() << "are WEST of ";
+	else if(buildPt.west.size() == 1)
+		qout << join.c_str() << "is WEST of ";
 	else
 		last = false;
-	for(auto i = buildPt.west.begin(); i != buildPt.west.end(); i++)
-		debugMessage << buildings[*i].name.c_str() << ", ";
-
 
 	if(last)
-		debugMessage << "and ";
+		join = "and ";
 	last = true;
-	if(buildPt.near.size() > 0)
-		debugMessage << "NEAR ";
+	for(auto i = buildPt.near.begin(); i != buildPt.near.end(); i++)
+		// qout << "(" << buildings[*i].description.c_str() 
+		// 	<< ")(called " << buildings[*i].name.c_str() << "), ";
+		qout << "(" << buildings[*i].description.c_str() << ")";
+
+	if(buildPt.near.size() > 1)
+		qout << join.c_str() << "are NEAR ";
+	else if(buildPt.near.size() == 1)
+		qout << join.c_str() << "is NEAR ";
 	else
 		last = false;
-	for(auto i = buildPt.near.begin(); i != buildPt.near.end(); i++)
-		debugMessage << buildings[*i].name.c_str() << ", ";
-
-
+	qout << endl;
 }
 
 
@@ -1043,162 +899,163 @@ vector<Point> MapReader::findCloud(const Building &buildPt)
 
 void MapReader::retrMinFeatures(Building &buildPt)
 {
+	if( campusImage.at<Vec3b>(buildPt.centerOfMass) == Vec3b(255,255,255) )
+	{
+		buildPt.near.insert(campusLabeled.at<char>(buildPt.centerOfMass) - 1);
+		return;
+	}
+
+	int minDistN, minDistS, minDistE, minDistW, minN, minS, minE, minW; 
+	minDistN=minDistS=minDistE=minDistW = campusImage.rows + campusImage.cols;
 	for(uchar i = 0; i < buildings.size(); i++)
 	{
+		int dist = abs(buildings[i].centerOfMass.x - buildPt.centerOfMass.x)
+					+ abs(buildings[i].centerOfMass.y - buildPt.centerOfMass.y);
 		if( near( buildings[i], buildPt ) )
 			buildPt.near.insert(i);
-		if( north( buildings[i], buildPt ) )
-			buildPt.north.insert(i);
-		if( south( buildings[i], buildPt ) )
-			buildPt.south.insert(i);
-		if( east( buildings[i], buildPt ) )
-			buildPt.east.insert(i);
-		if( west( buildings[i], buildPt ) )
-			buildPt.west.insert(i);
+		if( north( buildings[i], buildPt ) && dist < minDistN)
+		{
+			minDistN = dist;
+			minN = i;
+		}
+		if( south( buildings[i], buildPt ) && dist < minDistS)
+		{
+			minDistS = dist;
+			minS = i;
+		}
+		if( east( buildings[i], buildPt ) && dist < minDistE)
+		{
+			minDistE = dist;
+			minE = i;
+		}
+		if( west( buildings[i], buildPt ) && dist < minDistW)
+		{
+			minDistW = dist;
+			minW = i;
+		}
 	}
 
 
-	//eliminate extraneous relations via transitivity
-	for(auto i = buildPt.north.begin(); i != buildPt.north.end(); i++)
-		for(auto j = buildPt.north.begin(); j != buildPt.north.end(); j++)
-			if( northR[*i][*j] )
-			{
-				buildPt.north.erase(*j);
-				i = j = buildPt.north.begin();
-			}
+	//Keep only the closest direction relation
+	if( minDistN < campusImage.rows + campusImage.cols )
+		buildPt.north.insert(minN);
+	if( minDistS < campusImage.rows + campusImage.cols )
+		buildPt.south.insert(minS);
+	if( minDistE < campusImage.rows + campusImage.cols )
+		buildPt.east.insert(minE);
+	if( minDistW < campusImage.rows + campusImage.cols )
+		buildPt.west.insert(minW);
 
-	for(auto i = buildPt.south.begin(); i != buildPt.south.end(); i++)
-		for(auto j = buildPt.south.begin(); j != buildPt.south.end(); j++)
-			if( southR[*i][*j] )
-			{
-				buildPt.south.erase(*j);
-				i = j = buildPt.south.begin();
-			}
-
-	for(auto i = buildPt.east.begin(); i != buildPt.east.end(); i++)
-		for(auto j = buildPt.east.begin(); j != buildPt.east.end(); j++)
-			if( eastR[*i][*j] )
-			{
-				buildPt.east.erase(*j);
-				i = j = buildPt.east.begin();
-			}
-
-	for(auto i = buildPt.west.begin(); i != buildPt.west.end(); i++)
-		for(auto j = buildPt.west.begin(); j != buildPt.west.end(); j++)
-			if( westR[*i][*j] )
-			{
-				buildPt.west.erase(*j);
-				i = j = buildPt.west.begin();
-			}
+	
+	for(auto i = buildPt.near.begin(); i != buildPt.near.end(); i++)
+	{
+		if ( !buildPt.north.empty() 
+				&& north( buildings[*(buildPt.north.begin())], buildings[*i]) )
+			buildPt.north.clear();
+		if ( !buildPt.south.empty() 
+				&& south( buildings[*(buildPt.south.begin())], buildings[*i]) )
+			buildPt.south.clear();
+		if ( !buildPt.east.empty() 
+				&& east( buildings[*(buildPt.east.begin())], buildings[*i]) )
+			buildPt.east.clear();
+		if ( !buildPt.west.empty() 
+				&& west( buildings[*(buildPt.west.begin())], buildings[*i]) )
+			buildPt.west.clear();
+	}
 }
 
 
 void MapReader::clicked(QMouseEvent *e)
 {
+	QDebug debugMessage(QtDebugMsg);
+	if(takeinput)
+	{
+		Point pt(e->x(), e->y());
+
+		int dist = abs(pt.x - currentPath[curIdx].centerOfMass.x) 
+				+ abs(pt.y - currentPath[curIdx].centerOfMass.y);
+		debugMessage << dist << "  from intended target";
+		distances.push_back(dist);
+		if(curIdx == currentPath.size() -1)
+		{
+			takeinput == false;
+			return;
+		}
+		int i = currentPath[curIdx].number;
+		int j = currentPath[curIdx + 1].number;
+		debugMessage << "Now go ";
+		string join = "";
+
+	    printFeatures(currentPath[curIdx]);
+		
+		if(!buildings[i].north.empty() && buildings[i].north.count(j) > 0)
+		{
+			debugMessage << "north ";
+			join = "and ";
+		}
+		
+		if(!buildings[i].south.empty() && buildings[i].south.count(j) > 0)
+		{
+			debugMessage << join.c_str() << "south ";
+			join = "and ";
+		}
+		
+		if(!buildings[i].east.empty() && buildings[i].east.count(j) > 0)
+		{
+			debugMessage << join.c_str() << "east ";
+			join = "and ";
+		}
+		
+		if(!buildings[i].west.empty() && buildings[i].west.count(j) > 0)
+		{
+			debugMessage << join.c_str() << "west ";
+			join = "and ";
+		}
+		
+		if(!buildings[i].near.empty() && buildings[i].near.count(j) > 0)
+		{
+			debugMessage << join.c_str() << "near ";
+		}
+
+		curIdx++;
+		return;
+	}
 	// cout << e->x() << "," << e->y() << endl;
 	Point pt(e->x(), e->y());
 	Building buildPt(pt, minArea);
 
 	retrMinFeatures(buildPt);
 
-	// unordered_set<int> nearLoc, northLoc, southLoc, eastLoc, westLoc;
-
-
-	// qDebug() << "here";
-	// for(uchar i = 0; i < buildings.size(); i++)
-	// {
-	// 	// qDebug() <<(Building) buildings[i] << endl;
-	// 	if( near( buildings[i], buildPt ) )
-	// 		qDebug() << "Near " << buildings[i].name.c_str();
-	// }
-	// qDebug()  << "   ---";
-	
-	// for(uchar i = 0; i < buildings.size(); i++)
-	// {
-	// 	if( near( buildings[i], buildPt ) )
-	// 		buildPt.near.insert(i);
-	// 	if( north( buildings[i], buildPt ) )
-	// 		buildPt.north.insert(i);
-	// 	if( south( buildings[i], buildPt ) )
-	// 		buildPt.south.insert(i);
-	// 	if( east( buildings[i], buildPt ) )
-	// 		buildPt.east.insert(i);
-	// 	if( west( buildings[i], buildPt ) )
-	// 		buildPt.west.insert(i);
-	// }
-
-
-	// //eliminate extraneous relations via transitivity
-	// // unordered_set<int> temp((const unordered_set<int>)northLoc);
-	// // for(auto i = buildPt.north.begin(); i != buildPt.north.end(); i++)
-	// // 	for(auto j = buildPt.north.begin(); j != buildPt.north.end(); j++)
-	// // 		if( northR[*i][*j] )
-	// // 			temp.erase(*i);
-	// // buildPt.north = temp;
-
-	// for(auto i = buildPt.north.begin(); i != buildPt.north.end(); i++)
-	// 	for(auto j = buildPt.north.begin(); j != buildPt.north.end(); j++)
-	// 		if( northR[*i][*j] )
-	// 		{
-	// 			buildPt.north.erase(*i);
-	// 			i = j = buildPt.north.begin();
-	// 		}
-
-
-	// // temp = (const unordered_set<int>)buildPt.south;
-	// for(auto i = buildPt.south.begin(); i != buildPt.south.end(); i++)
-	// 	for(auto j = buildPt.south.begin(); j != buildPt.south.end(); j++)
-	// 		if( southR[*i][*j] )
-	// 		{
-	// 			buildPt.south.erase(*i);
-	// 			i = j = buildPt.south.begin();
-	// 		}
-	// // buildPt.south = temp;
-
-	// // temp = (const unordered_set<int>)buildPt.east;
-	// for(auto i = buildPt.east.begin(); i != buildPt.east.end(); i++)
-	// 	for(auto j = buildPt.east.begin(); j != buildPt.east.end(); j++)
-	// 		if( eastR[*i][*j] )
-	// 		{
-	// 			buildPt.east.erase(*i);
-	// 			i = j = buildPt.east.begin();
-	// 		}
-	// // buildPt.east = temp;
-
-	// // temp = (const unordered_set<int>)buildPt.west;
-	// for(auto i = buildPt.west.begin(); i != buildPt.west.end(); i++)
-	// 	for(auto j = buildPt.west.begin(); j != buildPt.west.end(); j++)
-	// 		if( westR[*i][*j] )
-	// 		{
-	// 			buildPt.west.erase(*i);
-	// 			i = j = buildPt.west.begin();
-			// }
-	// buildPt.west = temp;
-
-
-	// vector< unordered_set< int > > features;
-	// features.push_back(nearLoc);
-	// features.push_back(northLoc);
-	// features.push_back(southLoc);
-	// features.push_back(eastLoc);
-	// features.push_back(westLoc);
-
-	printFeatures(buildPt);
 
 	vector<Point> cloud = findCloud(buildPt);
 
-	drawCloud(cloud);
+	if(!ready)
+	{
+		drawCloud(cloud);
+		goal = buildPt;
+		ready = true;
+		qDebug() << "Goal: ";
+	}
+	else
+	{
+		cloudImage = campusImage.clone();
+		drawCloud(cloud);
+		source = buildPt;
+		ready = false;
+		qDebug() << "Start: ";
+	}
+
+	printFeatures(buildPt);
 }
 
 void MapReader::drawCloud(vector<Point> cloud)
 {
-	Mat cloudImage = campusImage.clone();
 	for (std::vector<Point>::iterator i = cloud.begin(); i != cloud.end(); ++i)
 	{
-		if(cloudImage.at<Vec3b>(*i) == Vec3b(255, 255, 255))
-			cloudImage.at<Vec3b>(*i) = Vec3b(0,100,0);
+		if( !ready )
+			cloudImage.at<Vec3b>(*i) = Vec3b(0,0,100);
 		else
-			cloudImage.at<Vec3b>(*i) += Vec3b(0,100,0);
+			cloudImage.at<Vec3b>(*i) = Vec3b(0,100,0);
 		// qDebug() << (*i).x << ", " << (*i).y;
 	}
 	displayMat(cloudImage);
@@ -1207,7 +1064,255 @@ void MapReader::drawCloud(vector<Point> cloud)
 
 
 
+vector<Building> MapReader::search()
+{
+	vector<Building> moves;
+	//keep total distance in first element
+	Building dist;
+	dist.number = 0;
+	moves.push_back(dist);
+	moves.push_back(source);
 
+	unordered_set<Point> contained;
+	moves = dfs(moves, contained);
+
+	QTextStream qout(stdout);
+	qout << "distance: " << moves[0].number << "\n";
+	qout << "size: " << moves.size() << "\n";
+	for(uchar i = 1; i < moves.size() - 1; i++)
+	{
+		qout << "step " << i << ":  go to ";
+		int cur = moves[i].number -1;
+		int next = moves[i+1].number -1;
+		string join = "";
+
+		if(next < 0)
+		{
+			// qDebug() << moves[i+1] << "\n:::-1221312:::" << next;
+			// printFeatures(moves[i]);
+			// qDebug()<<"\n";
+			if(!moves[i+1].north.empty() && moves[i+1].north.count(cur) > 0)
+			{
+				qout << "south ";
+				join = "and ";
+			}
+			
+			if(!moves[i+1].south.empty() && moves[i+1].south.count(cur) > 0)
+			{
+				qout << join.c_str() << "north ";
+				join = "and ";
+			}
+			
+			if(!moves[i+1].east.empty() && moves[i+1].east.count(cur) > 0)
+			{
+				qout << join.c_str() << "west ";
+				join = "and ";
+			}
+			
+			if(!moves[i+1].west.empty() && moves[i+1].west.count(cur) > 0)
+			{
+				qout << join.c_str() << "east ";
+				join = "and ";
+			}
+			
+			if(!moves[i+1].near.empty() && moves[i+1].near.count(cur) > 0)
+			{
+				qout << join.c_str() << "near ";
+			}
+
+		}
+		else
+		{
+			// qDebug() << moves[i] << "\n:::" << next;
+			// printFeatures(moves[i]);
+			// qDebug()<<"\n";
+			if(!moves[i].north.empty() && moves[i].north.count(next) > 0)
+			{
+				qout << "north ";
+				join = "and ";
+			}
+			
+			if(!moves[i].south.empty() && moves[i].south.count(next) > 0)
+			{
+				qout << join.c_str() << "south ";
+				join = "and ";
+			}
+			
+			if(!moves[i].east.empty() && moves[i].east.count(next) > 0)
+			{
+				qout << join.c_str() << "east ";
+				join = "and ";
+			}
+			
+			if(!moves[i].west.empty() && moves[i].west.count(next) > 0)
+			{
+				qout << join.c_str() << "west ";
+				join = "and ";
+			}
+			
+			if(!moves[i].near.empty() && moves[i].near.count(next) > 0)
+			{
+				qout << join.c_str() << "near ";
+			}
+			else
+			{
+				qout << "to ";
+			}
+		}
+		if(next < 0)
+		{
+            qout << "the location that: ";
+            qout.flush();
+            printFeatures(moves.back());
+		}
+		else
+			qout << "(" << moves[i+1].description.c_str() << ")" << "\n";
+	}
+
+	return moves;
+}
+
+static int cntr = 0;
+vector<Building> MapReader::dfs(const vector<Building> &moves, unordered_set<Point> contained)
+{
+	if(cntr++ % 100000 == 0 )
+		qDebug() << cntr;
+	Building curBuild = moves.back();
+	if(moves.size() > buildings.size()/3 || moves[0].number > campusImage.rows + campusImage.cols)
+		return vector<Building>();
+
+
+	if(curBuild.north == goal.north && curBuild.south == goal.south
+		&& curBuild.east == goal.east && curBuild.west == goal.west
+		&& curBuild.near == goal.near )
+	{
+		return moves;
+	}
+
+	int idx = curBuild.number;
+	vector<Building> minMoves = moves, tmp;
+	minMoves[0].number = (campusImage.rows + campusImage.cols);
+
+	if( goal.north.count(idx) || goal.south.count(idx)
+		|| goal.east.count(idx) || goal.west.count(idx) || goal.near.count(idx))
+	{
+		int dist = abs(goal.centerOfMass.x - curBuild.centerOfMass.x) 
+				+ abs(goal.centerOfMass.y - curBuild.centerOfMass.y);
+		tmp = moves;
+		tmp[0].number += dist;
+		tmp.push_back(goal);
+		return tmp;
+	}
+
+	for(auto i = curBuild.north.begin(); i != curBuild.north.end(); i++)
+	{
+		Building nextBuild = buildings[*i];
+		if( contained.count(nextBuild.centerOfMass) > 0)
+			continue;
+		int dist = abs(nextBuild.centerOfMass.x - curBuild.centerOfMass.x) 
+				+ abs(nextBuild.centerOfMass.y - curBuild.centerOfMass.y);
+		tmp = moves;
+		tmp[0].number += dist;
+		tmp.push_back(nextBuild);
+		unordered_set<Point> cTmp = (const unordered_set<Point>) contained;
+		cTmp.insert(nextBuild.centerOfMass);
+		tmp = dfs(tmp, cTmp);
+
+		if(!tmp.empty() && tmp[0].number < minMoves[0].number)
+			minMoves = tmp;
+	}
+
+	for(auto i = curBuild.south.begin(); i != curBuild.south.end(); i++)
+	{
+		Building nextBuild = buildings[*i];
+		if( contained.count(nextBuild.centerOfMass) > 0)
+			continue;
+		int dist = abs(nextBuild.centerOfMass.x - curBuild.centerOfMass.x) 
+				+ abs(nextBuild.centerOfMass.y - curBuild.centerOfMass.y);
+		tmp = moves;
+		tmp[0].number += dist;
+		tmp.push_back(nextBuild);
+		unordered_set<Point> cTmp = (const unordered_set<Point>) contained;
+		cTmp.insert(nextBuild.centerOfMass);
+		tmp = dfs(tmp, cTmp);
+
+		if(!tmp.empty() && tmp[0].number < minMoves[0].number)
+			minMoves = tmp;
+	}
+
+	for(auto i = curBuild.east.begin(); i != curBuild.east.end(); i++)
+	{
+		Building nextBuild = buildings[*i];
+		if( contained.count(nextBuild.centerOfMass) > 0)
+			continue;
+		int dist = abs(nextBuild.centerOfMass.x - curBuild.centerOfMass.x) 
+				+ abs(nextBuild.centerOfMass.y - curBuild.centerOfMass.y);
+		tmp = moves;
+		tmp[0].number += dist;
+		tmp.push_back(nextBuild);
+		unordered_set<Point> cTmp = (const unordered_set<Point>) contained;
+		cTmp.insert(nextBuild.centerOfMass);
+		tmp = dfs(tmp, cTmp);
+
+		if(!tmp.empty() && tmp[0].number < minMoves[0].number)
+			minMoves = tmp;
+	}
+
+	for(auto i = curBuild.west.begin(); i != curBuild.west.end(); i++)
+	{
+		Building nextBuild = buildings[*i];
+		if( contained.count(nextBuild.centerOfMass) > 0)
+			continue;
+		int dist = abs(nextBuild.centerOfMass.x - curBuild.centerOfMass.x) 
+				+ abs(nextBuild.centerOfMass.y - curBuild.centerOfMass.y);
+		tmp = moves;
+		tmp[0].number += dist;
+		tmp.push_back(nextBuild);
+		unordered_set<Point> cTmp = (const unordered_set<Point>) contained;
+		cTmp.insert(nextBuild.centerOfMass);
+		tmp = dfs(tmp, cTmp);
+
+		if(!tmp.empty() && tmp[0].number < minMoves[0].number)
+			minMoves = tmp;
+	}
+
+	for(auto i = curBuild.near.begin(); i != curBuild.near.end(); i++)
+	{
+		Building nextBuild = buildings[*i];
+		if( contained.count(nextBuild.centerOfMass) > 0)
+			continue;
+		int dist = abs(nextBuild.centerOfMass.x - curBuild.centerOfMass.x) 
+				+ abs(nextBuild.centerOfMass.y - curBuild.centerOfMass.y);
+		tmp = moves;
+		tmp[0].number += dist;
+		tmp.push_back(nextBuild);
+		unordered_set<Point> cTmp = (const unordered_set<Point>) contained;
+		cTmp.insert(nextBuild.centerOfMass);
+		tmp = dfs(tmp, cTmp);
+
+		if(!tmp.empty() && tmp[0].number < minMoves[0].number)
+			minMoves = tmp;
+	}
+
+	return minMoves;
+
+}
+
+
+void MapReader::on_btnStart_clicked()
+{
+    currentPath = search();
+    displayMat(campusImage);
+
+    // qDebug() << "Begin at:";
+    // printFeatures(currentPath[1]);
+
+    if(!currentPath.size() > 2)
+    {
+	    takeinput = true;
+	    curIdx = 1;
+	}
+}
 
 
 

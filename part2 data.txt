@@ -1,5 +1,3 @@
-
-
 1 (Pupin): CoM: [76, 14]   Area: 1538.5   Bound UL: [39, 3]  LR: [116, 28]
   Description:  narrow, medium sized, east to west oriented structure
 2 (Schapiro CEPSR): CoM: [143, 20]   Area: 1360   Bound UL: [123, 3]  LR: [164, 38]
@@ -208,403 +206,592 @@ near
 26 Butler                                                                    1  1  1     1 
 27 Carman                                                                          1  1    
 
+
+
+
+MINIMIZED
+NORTH
+           1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
+ 1 Pupin                                                                                   
+ 2 Schapir                                                                                 
+ 3 Mudd, E                                                                                 
+ 4 Physica 1                                                                               
+ 5 Gymnasi 1  1                                                                            
+ 6 Scherme    1  1                                                                         
+ 7 Chandle          1                                                                      
+ 8 Compute    1     1                                                                      
+ 9 Avery                  1                                                                
+10 Fayerwe                1                                                                
+11 Mathema                   1                                                             
+12 Low Lib       1     1        1                                                          
+13 St. Pau             1           1  1                                                    
+14 Earl Ha                      1        1                                                 
+15 Lewisoh                                        1                                        
+16 Philoso                                     1                                           
+17 Buell &                                     1                                           
+18 Alma Ma                                  1                                              
+19 Dodge               1                             1                                     
+20 Kent                                                 1  1                               
+21 College                                                    1  1  1                      
+22 Journal                                                             1                   
+23 Hamilto                                                             1                   
+24 Lion's                                                              1                   
+25 Lerner                                                                 1                
+26 Butler                                                              1                   
+27 Carman                                                                          1       
+
+SOUTH
+           1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
+ 1 Pupin            1  1                                                                   
+ 2 Schapir             1        1                                                          
+ 3 Mudd, E                1                                      1                         
+ 4 Physica                   1  1                          1                               
+ 5 Gymnasi                         1        1                    1                         
+ 6 Scherme                         1  1     1                                              
+ 7 Chandle                               1                    1                            
+ 8 Compute                                  1     1                                        
+ 9 Avery                                       1                                           
+10 Fayerwe                                     1                                           
+11 Mathema                                        1                                        
+12 Low Lib                                                    1                            
+13 St. Pau                                              1  1                               
+14 Earl Ha                                           1                                     
+15 Lewisoh                                                       1                         
+16 Philoso                                                          1                      
+17 Buell &                                                          1                      
+18 Alma Ma                                                             1                   
+19 Dodge                                                               1                   
+20 Kent                                                                1                   
+21 College                                                                1  1  1     1    
+22 Journal                                                                         1       
+23 Hamilto                                                                                 
+24 Lion's                                                                                  
+25 Lerner                                                                                1 
+26 Butler                                                                                  
+27 Carman                                                                                  
+
+EAST
+           1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
+ 1 Pupin      1                                                                            
+ 2 Schapir       1                                                                         
+ 3 Mudd, E                                                                                 
+ 4 Physica    1        1  1                                                                
+ 5 Gymnasi       1                                                                         
+ 6 Scherme                                                                                 
+ 7 Chandle             1  1        1                                                       
+ 8 Compute                1           1                                                    
+ 9 Avery                              1                                                    
+10 Fayerwe                                                                                 
+11 Mathema                1                 1                                              
+12 Low Lib                         1           1           1                               
+13 St. Pau                                                                                 
+14 Earl Ha                                  1                                              
+15 Lewisoh                                  1                 1                            
+16 Philoso                                                                                 
+17 Buell &                                              1                                  
+18 Alma Ma                                              1           1                      
+19 Dodge                                                      1                            
+20 Kent                                                                                    
+21 College                                                                                 
+22 Journal                                                          1        1  1          
+23 Hamilto                                                                                 
+24 Lion's                                                                                  
+25 Lerner                                                                             1    
+26 Butler                                                                    1  1          
+27 Carman                                                                             1    
+
+WEST
+           1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
+ 1 Pupin                                                                                   
+ 2 Schapir 1                                                                               
+ 3 Mudd, E    1        1                                                                   
+ 4 Physica                                                                                 
+ 5 Gymnasi          1        1                                                             
+ 6 Scherme          1           1        1                                                 
+ 7 Chandle                                                                                 
+ 8 Compute                   1                                                             
+ 9 Avery                        1        1        1                                        
+10 Fayerwe                         1        1                                              
+11 Mathema                                                                                 
+12 Low Lib                               1        1  1                                     
+13 St. Pau                                  1                                              
+14 Earl Ha                                                                                 
+15 Lewisoh                                                                                 
+16 Philoso                                  1                 1                            
+17 Buell &                                        1           1                            
+18 Alma Ma                                           1           1                         
+19 Dodge                                                                                   
+20 Kent                                                       1                            
+21 College                                                                                 
+22 Journal                                                                                 
+23 Hamilto                                                       1        1        1     1 
+24 Lion's                                                                          1     1 
+25 Lerner                                                                                  
+26 Butler                                                                          1     1 
+27 Carman                                                                                  
+
+NEAR
+           1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
+ 1 Pupin      1     1                                                                      
+ 2 Schapir 1     1  1  1                                                                   
+ 3 Mudd, E    1        1  1                                                                
+ 4 Physica 1  1        1     1                                                             
+ 5 Gymnasi 1  1  1  1     1  1  1  1                                                       
+ 6 Scherme       1     1           1  1                                                    
+ 7 Chandle          1           1        1                                                 
+ 8 Compute             1     1                                                             
+ 9 Avery                  1                    1                                           
+10 Fayerwe                1                    1                                           
+11 Mathema                   1                    1                                        
+12 Low Lib                         1                          1                            
+13 St. Pau                         1  1                 1  1                               
+14 Earl Ha                               1           1                                     
+15 Lewisoh                                        1              1                         
+16 Philoso                                     1                    1                      
+17 Buell &                                     1                                           
+18 Alma Ma                                                                                 
+19 Dodge                                             1                 1                   
+20 Kent                                                 1              1                   
+21 College                                                       1  1     1  1             
+22 Journal                                                       1     1           1       
+23 Hamilto                                                          1  1        1     1    
+24 Lion's                                                                    1        1    
+25 Lerner                                                                 1           1  1 
+26 Butler                                                                    1  1  1     1 
+27 Carman                                                                          1  1    
+
 1:
 South of Pupin is:
-	Physical Fitness Center	1
-	Gymnasium & Uris	2
+  Physical Fitness Center 1
+  Gymnasium & Uris  2
 East of Pupin is:
-	Schapiro CEPSR	3
+  Schapiro CEPSR  3
 Near to Pupin is:
-	Schapiro CEPSR	4
-	Physical Fitness Center	5
+  Schapiro CEPSR  4
+  Physical Fitness Center 5
 
 
 2:
 South of Schapiro CEPSR is:
-	Gymnasium & Uris	6
-	Computer Center	7
+  Gymnasium & Uris  6
+  Computer Center 7
 East of Schapiro CEPSR is:
-	Mudd, Engineering Terrace, Fairchild & Computer Science	8
+  Mudd, Engineering Terrace, Fairchild & Computer Science 8
 West of Schapiro CEPSR is:
-	Pupin	9
+  Pupin 9
 Near to Schapiro CEPSR is:
-	Pupin	10
-	Mudd, Engineering Terrace, Fairchild & Computer Science	11
-	Physical Fitness Center	12
-	Gymnasium & Uris	13
+  Pupin 10
+  Mudd, Engineering Terrace, Fairchild & Computer Science 11
+  Physical Fitness Center 12
+  Gymnasium & Uris  13
 
 
 3:
 South of Mudd, Engineering Terrace, Fairchild & Computer Science is:
-	Schermerhorn	14
-	Dodge	15
+  Schermerhorn  14
+  Dodge 15
 West of Mudd, Engineering Terrace, Fairchild & Computer Science is:
-	Schapiro CEPSR	16
-	Gymnasium & Uris	17
+  Schapiro CEPSR  16
+  Gymnasium & Uris  17
 Near to Mudd, Engineering Terrace, Fairchild & Computer Science is:
-	Schapiro CEPSR	18
-	Gymnasium & Uris	19
-	Schermerhorn	20
+  Schapiro CEPSR  18
+  Gymnasium & Uris  19
+  Schermerhorn  20
 
 
 4:
 North of Physical Fitness Center is:
-	Pupin	21
+  Pupin 21
 South of Physical Fitness Center is:
-	Chandler & Havemeyer	22
-	Computer Center	23
-	Buell & Maison Francaise	24
+  Chandler & Havemeyer  22
+  Computer Center 23
+  Buell & Maison Francaise  24
 East of Physical Fitness Center is:
-	Schapiro CEPSR	25
-	Gymnasium & Uris	26
-	Schermerhorn	27
+  Schapiro CEPSR  25
+  Gymnasium & Uris  26
+  Schermerhorn  27
 Near to Physical Fitness Center is:
-	Pupin	28
-	Schapiro CEPSR	29
-	Gymnasium & Uris	30
-	Chandler & Havemeyer	31
+  Pupin 28
+  Schapiro CEPSR  29
+  Gymnasium & Uris  30
+  Chandler & Havemeyer  31
 
 
 5:
 North of Gymnasium & Uris is:
-	Pupin	32
-	Schapiro CEPSR	33
+  Pupin 32
+  Schapiro CEPSR  33
 South of Gymnasium & Uris is:
-	Avery	34
-	Low Library	35
-	Dodge	36
+  Avery 34
+  Low Library 35
+  Dodge 36
 East of Gymnasium & Uris is:
-	Mudd, Engineering Terrace, Fairchild & Computer Science	37
+  Mudd, Engineering Terrace, Fairchild & Computer Science 37
 West of Gymnasium & Uris is:
-	Physical Fitness Center	38
-	Chandler & Havemeyer	39
+  Physical Fitness Center 38
+  Chandler & Havemeyer  39
 Near to Gymnasium & Uris is:
-	Pupin	40
-	Schapiro CEPSR	41
-	Mudd, Engineering Terrace, Fairchild & Computer Science	42
-	Physical Fitness Center	43
-	Schermerhorn	44
-	Chandler & Havemeyer	45
-	Computer Center	46
-	Avery	47
+  Pupin 40
+  Schapiro CEPSR  41
+  Mudd, Engineering Terrace, Fairchild & Computer Science 42
+  Physical Fitness Center 43
+  Schermerhorn  44
+  Chandler & Havemeyer  45
+  Computer Center 46
+  Avery 47
 
 
 6:
 North of Schermerhorn is:
-	Schapiro CEPSR	48
-	Mudd, Engineering Terrace, Fairchild & Computer Science	49
+  Schapiro CEPSR  48
+  Mudd, Engineering Terrace, Fairchild & Computer Science 49
 South of Schermerhorn is:
-	Avery	50
-	Fayerweather	51
-	Low Library	52
+  Avery 50
+  Fayerweather  51
+  Low Library 52
 West of Schermerhorn is:
-	Physical Fitness Center	53
-	Computer Center	54
-	Mathematics	55
+  Physical Fitness Center 53
+  Computer Center 54
+  Mathematics 55
 Near to Schermerhorn is:
-	Mudd, Engineering Terrace, Fairchild & Computer Science	56
-	Gymnasium & Uris	57
-	Avery	58
-	Fayerweather	59
+  Mudd, Engineering Terrace, Fairchild & Computer Science 56
+  Gymnasium & Uris  57
+  Avery 58
+  Fayerweather  59
 
 
 7:
 North of Chandler & Havemeyer is:
-	Physical Fitness Center	60
+  Physical Fitness Center 60
 South of Chandler & Havemeyer is:
-	Mathematics	61
-	Alma Mater	62
+  Mathematics 61
+  Alma Mater  62
 East of Chandler & Havemeyer is:
-	Gymnasium & Uris	63
-	Schermerhorn	64
-	Avery	65
+  Gymnasium & Uris  63
+  Schermerhorn  64
+  Avery 65
 Near to Chandler & Havemeyer is:
-	Physical Fitness Center	66
-	Computer Center	67
-	Mathematics	68
+  Physical Fitness Center 66
+  Computer Center 67
+  Mathematics 68
 
 
 8:
 North of Computer Center is:
-	Schapiro CEPSR	69
-	Physical Fitness Center	70
+  Schapiro CEPSR  69
+  Physical Fitness Center 70
 South of Computer Center is:
-	Low Library	71
-	Earl Hall	72
+  Low Library 71
+  Earl Hall 72
 East of Computer Center is:
-	Schermerhorn	73
-	Fayerweather	74
+  Schermerhorn  73
+  Fayerweather  74
 West of Computer Center is:
-	Chandler & Havemeyer	75
+  Chandler & Havemeyer  75
 Near to Computer Center is:
-	Gymnasium & Uris	76
-	Chandler & Havemeyer	77
+  Gymnasium & Uris  76
+  Chandler & Havemeyer  77
 
 
 9:
 North of Avery is:
-	Schermerhorn	78
+  Schermerhorn  78
 South of Avery is:
-	St. Paul's Chapel	79
+  St. Paul's Chapel 79
 East of Avery is:
-	Fayerweather	80
+  Fayerweather  80
 West of Avery is:
-	Computer Center	81
-	Mathematics	82
-	Earl Hall	83
+  Computer Center 81
+  Mathematics 82
+  Earl Hall 83
 Near to Avery is:
-	Schermerhorn	84
-	St. Paul's Chapel	85
+  Schermerhorn  84
+  St. Paul's Chapel 85
 
 
 10:
 North of Fayerweather is:
-	Schermerhorn	86
+  Schermerhorn  86
 South of Fayerweather is:
-	St. Paul's Chapel	87
+  St. Paul's Chapel 87
 West of Fayerweather is:
-	Avery	88
-	Low Library	89
+  Avery 88
+  Low Library 89
 Near to Fayerweather is:
-	Schermerhorn	90
-	St. Paul's Chapel	91
+  Schermerhorn  90
+  St. Paul's Chapel 91
 
 
 11:
 North of Mathematics is:
-	Chandler & Havemeyer	92
+  Chandler & Havemeyer  92
 South of Mathematics is:
-	Earl Hall	93
+  Earl Hall 93
 East of Mathematics is:
-	Schermerhorn	94
-	Low Library	95
+  Schermerhorn  94
+  Low Library 95
 Near to Mathematics is:
-	Chandler & Havemeyer	96
-	Earl Hall	97
+  Chandler & Havemeyer  96
+  Earl Hall 97
 
 
 12:
 North of Low Library is:
-	Mudd, Engineering Terrace, Fairchild & Computer Science	98
-	Gymnasium & Uris	99
-	Computer Center	100
+  Mudd, Engineering Terrace, Fairchild & Computer Science 98
+  Gymnasium & Uris  99
+  Computer Center 100
 South of Low Library is:
-	Alma Mater	101
+  Alma Mater  101
 East of Low Library is:
-	Avery	102
-	St. Paul's Chapel	103
-	Buell & Maison Francaise	104
+  Avery 102
+  St. Paul's Chapel 103
+  Buell & Maison Francaise  104
 West of Low Library is:
-	Mathematics	105
-	Earl Hall	106
-	Lewisohn	107
+  Mathematics 105
+  Earl Hall 106
+  Lewisohn  107
 Near to Low Library is:
-	Avery	108
-	Alma Mater	109
+  Avery 108
+  Alma Mater  109
 
 
 13:
 North of St. Paul's Chapel is:
-	Gymnasium & Uris	110
-	Avery	111
-	Fayerweather	112
+  Gymnasium & Uris  110
+  Avery 111
+  Fayerweather  112
 South of St. Paul's Chapel is:
-	Philosophy	113
-	Buell & Maison Francaise	114
+  Philosophy  113
+  Buell & Maison Francaise  114
 West of St. Paul's Chapel is:
-	Low Library	115
+  Low Library 115
 Near to St. Paul's Chapel is:
-	Avery	116
-	Fayerweather	117
-	Philosophy	118
-	Buell & Maison Francaise	119
+  Avery 116
+  Fayerweather  117
+  Philosophy  118
+  Buell & Maison Francaise  119
 
 
 14:
 North of Earl Hall is:
-	Computer Center	120
-	Mathematics	121
+  Computer Center 120
+  Mathematics 121
 South of Earl Hall is:
-	Lewisohn	122
+  Lewisohn  122
 East of Earl Hall is:
-	Low Library	123
+  Low Library 123
 Near to Earl Hall is:
-	Mathematics	124
-	Lewisohn	125
+  Mathematics 124
+  Lewisohn  125
 
 
 15:
 North of Lewisohn is:
-	Earl Hall	126
+  Earl Hall 126
 South of Lewisohn is:
-	Dodge	127
+  Dodge 127
 East of Lewisohn is:
-	Low Library	128
-	Alma Mater	129
+  Low Library 128
+  Alma Mater  129
 Near to Lewisohn is:
-	Earl Hall	130
-	Dodge	131
+  Earl Hall 130
+  Dodge 131
 
 
 16:
 North of Philosophy is:
-	St. Paul's Chapel	132
+  St. Paul's Chapel 132
 South of Philosophy is:
-	Kent	133
+  Kent  133
 West of Philosophy is:
-	Low Library	134
-	Alma Mater	135
+  Low Library 134
+  Alma Mater  135
 Near to Philosophy is:
-	St. Paul's Chapel	136
-	Kent	137
+  St. Paul's Chapel 136
+  Kent  137
 
 
 17:
 North of Buell & Maison Francaise is:
-	St. Paul's Chapel	138
+  St. Paul's Chapel 138
 South of Buell & Maison Francaise is:
-	Kent	139
+  Kent  139
 East of Buell & Maison Francaise is:
-	Philosophy	140
+  Philosophy  140
 West of Buell & Maison Francaise is:
-	Earl Hall	141
-	Alma Mater	142
+  Earl Hall 141
+  Alma Mater  142
 Near to Buell & Maison Francaise is:
-	St. Paul's Chapel	143
+  St. Paul's Chapel 143
 
 
 18:
 North of Alma Mater is:
-	Low Library	144
+  Low Library 144
 South of Alma Mater is:
-	College Walk	145
+  College Walk  145
 East of Alma Mater is:
-	Philosophy	146
-	Kent	147
+  Philosophy  146
+  Kent  147
 West of Alma Mater is:
-	Lewisohn	148
-	Dodge	149
+  Lewisohn  148
+  Dodge 149
 
 
 19:
 North of Dodge is:
-	Gymnasium & Uris	150
-	Lewisohn	151
+  Gymnasium & Uris  150
+  Lewisohn  151
 South of Dodge is:
-	College Walk	152
+  College Walk  152
 East of Dodge is:
-	Alma Mater	153
+  Alma Mater  153
 Near to Dodge is:
-	Lewisohn	154
-	College Walk	155
+  Lewisohn  154
+  College Walk  155
 
 
 20:
 North of Kent is:
-	Philosophy	156
-	Buell & Maison Francaise	157
+  Philosophy  156
+  Buell & Maison Francaise  157
 South of Kent is:
-	College Walk	158
+  College Walk  158
 West of Kent is:
-	Alma Mater	159
+  Alma Mater  159
 Near to Kent is:
-	Philosophy	160
-	College Walk	161
+  Philosophy  160
+  College Walk  161
 
 
 21:
 North of College Walk is:
-	Alma Mater	162
-	Dodge	163
-	Kent	164
+  Alma Mater  162
+  Dodge 163
+  Kent  164
 South of College Walk is:
-	Journalism & Furnald	165
-	Hamilton, Hartley, Wallach & John Jay	166
-	Lion's Court	167
-	Butler Library	168
+  Journalism & Furnald  165
+  Hamilton, Hartley, Wallach & John Jay 166
+  Lion's Court  167
+  Butler Library  168
 Near to College Walk is:
-	Dodge	169
-	Kent	170
-	Journalism & Furnald	171
-	Hamilton, Hartley, Wallach & John Jay	172
+  Dodge 169
+  Kent  170
+  Journalism & Furnald  171
+  Hamilton, Hartley, Wallach & John Jay 172
 
 
 22:
 North of Journalism & Furnald is:
-	College Walk	173
+  College Walk  173
 South of Journalism & Furnald is:
-	Lerner Hall	174
+  Lerner Hall 174
 East of Journalism & Furnald is:
-	Kent	175
-	Hamilton, Hartley, Wallach & John Jay	176
-	Lion's Court	177
+  Kent  175
+  Hamilton, Hartley, Wallach & John Jay 176
+  Lion's Court  177
 Near to Journalism & Furnald is:
-	Dodge	178
-	College Walk	179
-	Lerner Hall	180
+  Dodge 178
+  College Walk  179
+  Lerner Hall 180
 
 
 23:
 North of Hamilton, Hartley, Wallach & John Jay is:
-	College Walk	181
+  College Walk  181
 West of Hamilton, Hartley, Wallach & John Jay is:
-	Dodge	182
-	Journalism & Furnald	183
-	Lerner Hall	184
-	Carman	185
+  Dodge 182
+  Journalism & Furnald  183
+  Lerner Hall 184
+  Carman  185
 Near to Hamilton, Hartley, Wallach & John Jay is:
-	Kent	186
-	College Walk	187
-	Lion's Court	188
-	Butler Library	189
+  Kent  186
+  College Walk  187
+  Lion's Court  188
+  Butler Library  189
 
 
 24:
 North of Lion's Court is:
-	College Walk	190
+  College Walk  190
 West of Lion's Court is:
-	Lerner Hall	191
-	Carman	192
+  Lerner Hall 191
+  Carman  192
 Near to Lion's Court is:
-	Hamilton, Hartley, Wallach & John Jay	193
-	Butler Library	194
+  Hamilton, Hartley, Wallach & John Jay 193
+  Butler Library  194
 
 
 25:
 North of Lerner Hall is:
-	Journalism & Furnald	195
+  Journalism & Furnald  195
 South of Lerner Hall is:
-	Carman	196
+  Carman  196
 East of Lerner Hall is:
-	Butler Library	197
+  Butler Library  197
 Near to Lerner Hall is:
-	Journalism & Furnald	198
-	Butler Library	199
-	Carman	200
+  Journalism & Furnald  198
+  Butler Library  199
+  Carman  200
 
 
 26:
 North of Butler Library is:
-	College Walk	201
+  College Walk  201
 East of Butler Library is:
-	Hamilton, Hartley, Wallach & John Jay	202
-	Lion's Court	203
+  Hamilton, Hartley, Wallach & John Jay 202
+  Lion's Court  203
 West of Butler Library is:
-	Lerner Hall	204
-	Carman	205
+  Lerner Hall 204
+  Carman  205
 Near to Butler Library is:
-	Hamilton, Hartley, Wallach & John Jay	206
-	Lion's Court	207
-	Lerner Hall	208
-	Carman	209
+  Hamilton, Hartley, Wallach & John Jay 206
+  Lion's Court  207
+  Lerner Hall 208
+  Carman  209
 
 
 27:
 North of Carman is:
-	Lerner Hall	210
+  Lerner Hall 210
 East of Carman is:
-	Butler Library	211
+  Butler Library  211
 Near to Carman is:
-	Lerner Hall	212
-	Butler Library	213
+  Lerner Hall 212
+  Butler Library  213
 
+
+
+
+
+
+
+
+
+Start:  
+( 212 ,  43 ) is   NEAR  ( the lumpy, large structure )(called  Mudd, Engineering Terrace, Fairchild & Computer Science ),  
+
+Goal:  
+( 127 ,  447 ) is   NEAR  ( the cross-shaped, large, east to west oriented structure )(called  Butler Library ),  
+
+
+
+
+
+
+
+
+Start:  
+( 13 ,  223 ) is   NORTH of  ( the I-shaped, medium sized, north to south oriented structure )(called  Lewisohn ),  and  WEST of  ( the cross-shaped, small, east to west oriented structure )(called  Earl Hall ),  and  NEAR  ( the I-shaped, medium sized, north to south oriented structure )(called  Lewisohn ),  
+
+Goal:  
+( 239 ,  150 ) is   WEST of  ( the cross-shaped, medium sized, north to south oriented structure )(called  Fayerweather ),  and  NEAR  ( the cross-shaped, medium sized, north to south oriented structure )(called  Fayerweather ),  ( the lumpy, large structure )(called  Schermerhorn ),  
+
+
+
+
+Start:  
+( 192 ,  382 ) is   NORTH of  ( the rectangular, small, north to south oriented structure )(called  Lion's Court ),  and  NEAR  ( the rectangular, small, north to south oriented structure )(called  Lion's Court ),  ( the U-shaped, large, north to south oriented structure )(called  Hamilton, Hartley, Wallach & John Jay ),  
+
+Goal:  
+( 23 ,  16 ) is   NORTH of  ( the large, east to west oriented structure )(called  Physical Fitness Center ),  and  WEST of  ( the narrow, medium sized, east to west oriented structure )(called  Pupin ),  and  NEAR  ( the large, east to west oriented structure )(called  Physical Fitness Center ),  

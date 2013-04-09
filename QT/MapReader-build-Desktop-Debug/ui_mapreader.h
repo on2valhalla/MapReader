@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mapreader.ui'
 **
-** Created: Mon Apr 8 11:23:43 2013
+** Created: Tue Apr 9 13:06:08 2013
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -17,10 +17,11 @@
 #include <QtGui/QHeaderView>
 #include <QtGui/QMainWindow>
 #include <QtGui/QMenuBar>
+#include <QtGui/QPushButton>
 #include <QtGui/QStatusBar>
 #include <QtGui/QToolBar>
 #include <QtGui/QWidget>
-#include "clicklabel.h"
+#include "clickablelabel.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -29,6 +30,8 @@ class Ui_MapReader
 public:
     QWidget *centralWidget;
     ClickableLabel *lblImage;
+    QPushButton *btnStart;
+    QPushButton *btnReset;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -37,7 +40,7 @@ public:
     {
         if (MapReader->objectName().isEmpty())
             MapReader->setObjectName(QString::fromUtf8("MapReader"));
-        MapReader->resize(321, 571);
+        MapReader->resize(443, 571);
         centralWidget = new QWidget(MapReader);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         lblImage = new ClickableLabel(centralWidget);
@@ -49,10 +52,16 @@ public:
         sizePolicy.setHeightForWidth(lblImage->sizePolicy().hasHeightForWidth());
         lblImage->setSizePolicy(sizePolicy);
         lblImage->setMouseTracking(true);
+        btnStart = new QPushButton(centralWidget);
+        btnStart->setObjectName(QString::fromUtf8("btnStart"));
+        btnStart->setGeometry(QRect(320, 20, 114, 32));
+        btnReset = new QPushButton(centralWidget);
+        btnReset->setObjectName(QString::fromUtf8("btnReset"));
+        btnReset->setGeometry(QRect(320, 50, 114, 32));
         MapReader->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MapReader);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 321, 22));
+        menuBar->setGeometry(QRect(0, 0, 443, 22));
         MapReader->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MapReader);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -69,7 +78,9 @@ public:
     void retranslateUi(QMainWindow *MapReader)
     {
         MapReader->setWindowTitle(QApplication::translate("MapReader", "MapReader", 0, QApplication::UnicodeUTF8));
-        lblImage->setText(QString());
+        lblImage->setProperty("text", QVariant(QString()));
+        btnStart->setText(QApplication::translate("MapReader", "Start", 0, QApplication::UnicodeUTF8));
+        btnReset->setText(QApplication::translate("MapReader", "Reset", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

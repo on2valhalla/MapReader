@@ -25,7 +25,7 @@ class MapReader;
 }
 
 struct Building {
-	char number;
+	int number;
 	string name;
 	Moments mom;
 	Point centerOfMass;
@@ -55,9 +55,15 @@ struct Building {
 		this->description = "";
 	}
 
+	bool operator==(const Building &rhs)
+	{
+		return (centerOfMass == rhs.centerOfMass)
+				&& (number == rhs.number);
+	}
+
 	friend ostream& operator<< (ostream &o, const Building &b)
 	{
-		o << (int)b.number << " (" << b.name << "): "
+		o << b.number << " (" << b.name << "): "
 		  << "CoM: " << b.centerOfMass << "   Area: " << b.mom.m00
 		  << "   Bound UL: [" << b.MBR.x << ", " << b.MBR.y
 		  << "]  LR: [" << b.MBR.x + b.MBR.width << ", " << b.MBR.y +b.MBR.height
@@ -67,7 +73,7 @@ struct Building {
 
 	friend QDebug operator<< (QDebug q, const Building &b)
 	{
-		q << (int)b.number << " (" << b.name.c_str() << "): "
+		q << b.number << " (" << b.name.c_str() << "): "
 		  << "CoM: (" << b.centerOfMass.y << ", " 
 		  << b.centerOfMass.x << ")   Area: " << b.mom.m00
 		  << "   Bound UL: [" << b.MBR.x << ", " << b.MBR.y
@@ -130,10 +136,18 @@ public:
 	bool west(const Building &s, const Building &g);
 	bool near(const Building &s, const Building &g);
 
+
+	vector<Building> search();
+	vector<Building> dfs(const vector<Building> &moves, unordered_set<Point> contained);
+
+private slots:
+    void on_btnStart_clicked();
+
 private:
 	Ui::MapReader *ui;
 	Mat campusImage;
 	Mat campusLabeled;
+	Mat cloudImage;
 	vector<Building> buildings;
 	vector< vector< bool > > northR;
 	vector< vector< bool > > southR;
@@ -141,6 +155,12 @@ private:
 	vector< vector< bool > > westR;
 	vector< vector< bool > > nearR;
 
+	vector<Building> currentPath;
+	vector<int> distances;
+	int curIdx;
+
+	Building source, goal;
+	bool ready, takeinput;
 	int minArea, maxArea, avgArea, areaRange;
 };
 
