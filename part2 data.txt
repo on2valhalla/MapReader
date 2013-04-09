@@ -1,723 +1,610 @@
 
+
+1 (Pupin): CoM: [76, 14]   Area: 1538.5   Bound UL: [39, 3]  LR: [116, 28]
+  Description:  narrow, medium sized, east to west oriented structure
+2 (Schapiro CEPSR): CoM: [143, 20]   Area: 1360   Bound UL: [123, 3]  LR: [164, 38]
+  Description:  squarish, medium sized structure
+3 (Mudd, Engineering Terrace, Fairchild & Computer Science): CoM: [224, 35]   Area: 5870   Bound UL: [166, 3]  LR: [273, 87]
+  Description:  lumpy, large structure
+4 (Physical Fitness Center): CoM: [59, 58]   Area: 5214.5   Bound UL: [3, 34]  LR: [116, 91]
+  Description:  large, east to west oriented structure
+5 (Gymnasium & Uris): CoM: [142, 99]   Area: 5606   Bound UL: [110, 48]  LR: [176, 148]
+  Description:  large, north to south oriented structure
+6 (Schermerhorn): CoM: [233, 120]   Area: 3696   Bound UL: [181, 77]  LR: [274, 148]
+  Description:  lumpy, large structure
+7 (Chandler & Havemeyer): CoM: [37, 119]   Area: 3429   Bound UL: [3, 81]  LR: [81, 148]
+  Description:  lumpy, large structure
+8 (Computer Center): CoM: [96, 136]   Area: 286   Bound UL: [90, 125]  LR: [104, 148]
+  Description:  rectangular, small, north to south oriented structure
+9 (Avery): CoM: [204, 175]   Area: 1090   Bound UL: [191, 151]  LR: [216, 202]
+  Description:  rectangular, medium sized, north to south oriented structure
+10 (Fayerweather): CoM: [259, 176]   Area: 1108   Bound UL: [247, 151]  LR: [273, 202]
+  Description:  cross-shaped, medium sized, north to south oriented structure
+11 (Mathematics): CoM: [17, 182]   Area: 1106   Bound UL: [3, 158]  LR: [32, 207]
+  Description:  I-shaped, medium sized, north to south oriented structure
+12 (Low Library): CoM: [135, 221]   Area: 3782   Bound UL: [101, 187]  LR: [170, 257]
+  Description:  cross-shaped, large structure
+13 (St. Paul's Chapel): CoM: [226, 222]   Area: 1019.5   Bound UL: [201, 210]  LR: [252, 235]
+  Description:  cross-shaped, medium sized, east to west oriented structure
+14 (Earl Hall): CoM: [49, 221]   Area: 706   Bound UL: [31, 211]  LR: [69, 234]
+  Description:  cross-shaped, small, east to west oriented structure
+15 (Lewisohn): CoM: [17, 259]   Area: 1218   Bound UL: [3, 233]  LR: [32, 286]
+  Description:  I-shaped, medium sized, north to south oriented structure
+16 (Philosophy): CoM: [258, 263]   Area: 1002   Bound UL: [245, 240]  LR: [273, 287]
+  Description:  I-shaped, medium sized, north to south oriented structure
+17 (Buell & Maison Francaise): CoM: [208, 253]   Area: 302   Bound UL: [196, 246]  LR: [221, 262]
+  Description:  cross-shaped, small, east to west oriented structure
+18 (Alma Mater): CoM: [136, 276]   Area: 196   Bound UL: [129, 269]  LR: [144, 284]
+  Description:  squarish, small structure
+19 (Dodge): CoM: [41, 301]   Area: 1485   Bound UL: [3, 289]  LR: [81, 312]
+  Description:  narrow, medium sized, east to west oriented structure
+20 (Kent): CoM: [233, 300]   Area: 1365   Bound UL: [194, 290]  LR: [273, 311]
+  Description:  narrow, medium sized, east to west oriented structure
+21 (College Walk): CoM: [137, 322]   Area: 4624   Bound UL: [1, 314]  LR: [274, 332]
+  Description:  narrow, large, east to west oriented structure
+22 (Journalism & Furnald): CoM: [30, 363]   Area: 2444   Bound UL: [4, 338]  LR: [82, 415]
+  Description:  L-shaped, medium sized structure
+23 (Hamilton, Hartley, Wallach & John Jay): CoM: [240, 417]   Area: 5532   Bound UL: [191, 338]  LR: [271, 491]
+  Description:  U-shaped, large, north to south oriented structure
+24 (Lion's Court): CoM: [204, 421]   Area: 858   Bound UL: [193, 402]  LR: [216, 442]
+  Description:  rectangular, small, north to south oriented structure
+25 (Lerner Hall): CoM: [38, 441]   Area: 2139   Bound UL: [4, 426]  LR: [74, 458]
+  Description:  rectangular, medium sized, east to west oriented structure
+26 (Butler Library): CoM: [132, 460]   Area: 5130   Bound UL: [85, 431]  LR: [180, 491]
+  Description:  cross-shaped, large, east to west oriented structure
+27 (Carman): CoM: [38, 474]   Area: 2139   Bound UL: [4, 459]  LR: [74, 491]
+  Description:  rectangular, medium sized, east to west oriented structure
+
+
+
 COMPLETE
 north
-        1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
- 1 Pupi                                                                                 
- 2 Scha                                                                                 
- 3 Mudd                                                                                 
- 4 Phys 1  1                                                                            
- 5 Gymn 1  1                                                                            
- 6 Sche 1  1  1                                                                         
- 7 Chan 1  1  1  1                                                                      
- 8 Comp 1  1  1  1                                                                      
- 9 Aver 1  1  1  1  1  1                                                                
-10 Faye 1  1  1  1  1  1                                                                
-11 Math 1  1  1  1  1     1  1                                                          
-12 Low  1  1  1  1  1  1  1  1                                                          
-13 St.  1  1  1  1  1  1  1  1  1  1                                                    
-14 Earl 1  1  1  1  1  1  1  1        1                                                 
-15 Lewi 1  1  1  1  1  1  1  1        1        1                                        
-16 Phil 1  1  1  1  1  1  1  1  1  1        1                                           
-17 Buel 1  1  1  1  1  1  1  1  1  1     1  1                                           
-18 Alma 1  1  1  1  1  1  1  1  1  1  1  1  1  1                                        
-19 Dodg 1  1  1  1  1  1  1  1  1  1  1  1  1  1  1                                     
-20 Kent 1  1  1  1  1  1  1  1  1  1  1  1  1  1     1  1                               
-21 Coll 1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1                      
-22 Jour 1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1     1                   
-23 Hami 1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1                   
-24 Lion 1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1                   
-25 Lern 1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1                
-26 Butl 1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1                
-27 Carm 1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1        1       
+           1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
+ 1 Pupin                                                                                   
+ 2 Schapir                                                                                 
+ 3 Mudd, E                                                                                 
+ 4 Physica 1                                                                               
+ 5 Gymnasi 1  1                                                                            
+ 6 Scherme    1  1                                                                         
+ 7 Chandle 1        1                                                                      
+ 8 Compute 1  1     1                                                                      
+ 9 Avery      1  1        1                                                                
+10 Fayerwe       1        1                                                                
+11 Mathema 1        1        1                                                             
+12 Low Lib 1  1  1  1  1        1                                                          
+13 St. Pau    1  1     1  1        1  1                                                    
+14 Earl Ha 1  1     1        1  1        1                                                 
+15 Lewisoh 1  1     1        1           1        1                                        
+16 Philoso    1  1        1        1  1        1                                           
+17 Buell &    1  1     1  1        1  1        1                                           
+18 Alma Ma 1  1  1  1  1        1           1                                              
+19 Dodge   1  1     1  1     1  1        1        1  1                                     
+20 Kent    1  1  1     1  1        1  1        1        1  1                               
+21 College 1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1                      
+22 Journal 1  1  1  1  1     1  1        1  1     1  1           1     1                   
+23 Hamilto 1  1  1  1  1  1     1  1  1     1  1        1  1  1     1  1                   
+24 Lion's  1  1  1  1  1  1     1  1  1     1  1        1  1  1     1  1                   
+25 Lerner  1  1  1  1  1  1  1  1  1     1  1     1  1        1  1     1  1                
+26 Butler  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1                   
+27 Carman  1  1  1  1  1  1  1  1  1     1  1     1  1        1  1     1  1        1       
 
 south
-        1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
- 1 Pupi          1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1 
- 2 Scha          1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1 
- 3 Mudd                1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1 
- 4 Phys                   1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1 
- 5 Gymn                         1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1 
- 6 Sche                         1  1     1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1 
- 7 Chan                               1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1 
- 8 Comp                               1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1 
- 9 Aver                                     1        1  1  1  1  1  1  1  1  1  1  1  1 
-10 Faye                                     1        1  1  1  1  1  1  1  1  1  1  1  1 
-11 Math                                        1  1        1  1  1  1  1  1  1  1  1  1 
-12 Low                                                  1  1  1  1  1  1  1  1  1  1  1 
-13 St.                                               1  1  1     1  1  1  1  1  1  1  1 
-14 Earl                                           1        1  1     1  1  1  1  1  1  1 
-15 Lewi                                                       1     1  1  1  1  1  1  1 
-16 Phil                                                          1  1     1  1  1  1  1 
-17 Buel                                                          1  1  1  1  1  1  1  1 
-18 Alma                                                             1  1  1  1  1  1  1 
-19 Dodg                                                             1  1  1  1  1  1  1 
-20 Kent                                                             1     1  1  1  1  1 
-21 Coll                                                                1  1  1  1  1  1 
-22 Jour                                                                         1  1  1 
-23 Hami                                                                                 
-24 Lion                                                                                 
-25 Lern                                                                               1 
-26 Butl                                                                                 
-27 Carm                                                                                 
+           1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
+ 1 Pupin            1  1     1  1        1  1     1  1     1  1  1  1  1  1  1  1  1  1  1 
+ 2 Schapir             1        1  1        1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1 
+ 3 Mudd, E                1        1  1     1  1        1  1  1  1  1  1  1  1  1  1  1  1 
+ 4 Physica                   1  1        1  1     1  1     1  1  1  1  1  1  1  1  1  1  1 
+ 5 Gymnasi                         1        1  1           1  1  1  1  1  1  1  1  1  1  1 
+ 6 Scherme                         1  1     1  1        1  1  1     1  1     1  1  1  1  1 
+ 7 Chandle                               1        1  1        1  1     1  1     1  1  1  1 
+ 8 Compute                                  1     1           1  1     1  1  1  1  1  1  1 
+ 9 Avery                                       1        1  1        1  1     1  1     1    
+10 Fayerwe                                     1        1           1  1     1  1     1    
+11 Mathema                                        1  1           1     1  1        1  1  1 
+12 Low Lib                                                    1        1     1  1  1  1  1 
+13 St. Pau                                              1  1        1  1     1  1     1    
+14 Earl Ha                                           1           1     1  1        1  1  1 
+15 Lewisoh                                                       1     1  1        1  1  1 
+16 Philoso                                                          1  1     1  1          
+17 Buell &                                                          1  1     1  1     1    
+18 Alma Ma                                                             1        1     1  1 
+19 Dodge                                                               1  1        1  1  1 
+20 Kent                                                                1     1  1     1    
+21 College                                                                1  1  1  1  1  1 
+22 Journal                                                                         1     1 
+23 Hamilto                                                                                 
+24 Lion's                                                                                  
+25 Lerner                                                                                1 
+26 Butler                                                                                  
+27 Carman                                                                                  
 
 east
-        1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
- 1 Pupi    1  1     1  1        1  1                                                    
- 2 Scha       1        1                                                                
- 3 Mudd                                                                                 
- 4 Phys    1  1     1  1        1  1        1        1  1                               
- 5 Gymn       1        1        1  1                                                    
- 6 Sche                                                                                 
- 7 Chan    1  1     1  1     1  1  1     1  1        1  1        1                      
- 8 Comp       1     1  1        1  1        1        1  1                               
- 9 Aver                            1                                                    
-10 Faye                                                                                 
-11 Math       1     1  1     1  1  1     1  1  1     1  1  1     1        1             
-12 Low                 1        1  1        1        1  1        1                      
-13 St.                             1                 1                                  
-14 Earl       1        1        1  1     1  1        1  1  1     1        1             
-15 Lewi                1        1  1     1  1  1     1  1  1     1        1  1          
-16 Phil                                                                                 
-17 Buel                                              1                                  
-18 Alma                            1        1        1  1        1                      
-19 Dodg                1        1  1     1  1        1  1  1     1        1  1          
-20 Kent                                                                                 
-21 Coll                                                                                 
-22 Jour                         1  1        1        1  1  1     1        1  1     1    
-23 Hami                                                                                 
-24 Lion                                                                                 
-25 Lern                                     1        1  1        1        1  1     1    
-26 Butl                                                                   1  1          
-27 Carm                                              1           1        1  1     1    
+           1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
+ 1 Pupin      1  1                                                                         
+ 2 Schapir       1                                                                         
+ 3 Mudd, E                                                                                 
+ 4 Physica    1  1     1  1                                                                
+ 5 Gymnasi       1                                                                         
+ 6 Scherme                                                                                 
+ 7 Chandle             1  1        1  1                                                    
+ 8 Compute                1           1                                                    
+ 9 Avery                              1                                                    
+10 Fayerwe                                                                                 
+11 Mathema                1        1  1     1  1                                           
+12 Low Lib                         1  1        1        1  1                               
+13 St. Pau                                                                                 
+14 Earl Ha                            1     1  1        1  1                               
+15 Lewisoh                                  1  1        1  1  1     1                      
+16 Philoso                                                                                 
+17 Buell &                                              1                                  
+18 Alma Ma                                              1           1                      
+19 Dodge                                                1     1     1                      
+20 Kent                                                                                    
+21 College                                                                                 
+22 Journal                                                          1        1  1          
+23 Hamilto                                                                                 
+24 Lion's                                                                                  
+25 Lerner                                                                    1  1     1    
+26 Butler                                                                    1  1          
+27 Carman                                                                             1    
 
 west
-        1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
- 1 Pupi                                                                                 
- 2 Scha 1        1        1                                                             
- 3 Mudd 1  1     1  1     1  1        1        1  1                                     
- 4 Phys                                                                                 
- 5 Gymn 1        1        1  1        1        1                                        
- 6 Sche 1  1     1  1     1  1        1  1     1  1           1        1                
- 7 Chan                                                                                 
- 8 Comp                   1           1                                                 
- 9 Aver          1        1  1        1  1     1  1           1                         
-10 Faye 1        1  1     1  1  1     1  1  1  1  1        1  1        1                
-11 Math                                                                                 
-12 Low                    1           1        1  1           1                         
-13 St.           1        1  1        1  1     1  1        1  1        1                
-14 Earl                               1           1                                     
-15 Lewi                                                                                 
-16 Phil          1        1  1        1  1  1  1  1     1  1  1        1        1     1 
-17 Buel                   1  1        1  1     1  1        1  1        1                
-18 Alma                               1        1  1           1        1                
-19 Dodg                                                                                 
-20 Kent                   1  1        1  1     1  1        1  1        1        1     1 
-21 Coll                                                                                 
-22 Jour                                                                                 
-23 Hami                               1        1  1           1        1        1  1  1 
-24 Lion                                           1           1        1        1  1  1 
-25 Lern                                                                                 
-26 Butl                                                                1        1     1 
-27 Carm                                                                                 
+           1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
+ 1 Pupin                                                                                   
+ 2 Schapir 1                                                                               
+ 3 Mudd, E 1  1     1  1     1                                                             
+ 4 Physica                                                                                 
+ 5 Gymnasi          1        1                                                             
+ 6 Scherme          1        1  1        1                                                 
+ 7 Chandle                                                                                 
+ 8 Compute                   1                                                             
+ 9 Avery                     1  1        1        1                                        
+10 Fayerwe                   1  1  1     1  1     1                                        
+11 Mathema                                                                                 
+12 Low Lib                               1        1  1                                     
+13 St. Pau                               1  1     1  1                                     
+14 Earl Ha                                                                                 
+15 Lewisoh                                                                                 
+16 Philoso                                  1     1  1        1  1                         
+17 Buell &                                        1  1        1                            
+18 Alma Ma                                           1           1                         
+19 Dodge                                                                                   
+20 Kent                                              1        1  1                         
+21 College                                                                                 
+22 Journal                                                                                 
+23 Hamilto                                                       1        1        1     1 
+24 Lion's                                                                          1     1 
+25 Lerner                                                                                  
+26 Butler                                                                          1     1 
+27 Carman                                                                                  
 
 near
-        1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
- 1 Pupi    1     1                                                                      
- 2 Scha 1     1  1  1                                                                   
- 3 Mudd    1        1  1                                                                
- 4 Phys 1  1        1     1  1                                                          
- 5 Gymn 1  1  1  1     1  1  1  1        1                                              
- 6 Sche       1     1           1  1                                                    
- 7 Chan          1           1        1                                                 
- 8 Comp             1     1                                                             
- 9 Aver                1                    1                                           
-10 Faye                1                    1                                           
-11 Math                   1                    1                                        
-12 Low                          1                          1                            
-13 St.                          1  1                 1  1                               
-14 Earl                               1           1                                     
-15 Lewi                                        1              1                         
-16 Phil                                     1                    1                      
-17 Buel                                     1                                           
-18 Alma                                                                                 
-19 Dodg                                           1                 1                   
-20 Kent                                              1              1                   
-21 Coll                                                    1  1  1     1  1             
-22 Jour                                                       1     1           1       
-23 Hami                                                          1  1        1     1    
-24 Lion                                                                   1        1    
-25 Lern                                                                1           1  1 
-26 Butl                                                                   1  1  1     1 
-27 Carm                                                                         1  1    
-
-
-
-
-MINIMIZED
-north
-        1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
- 1 Pupi                                                                                 
- 2 Scha                                                                                 
- 3 Mudd                                                                                 
- 4 Phys 1  1                                                                            
- 5 Gymn 1  1                                                                            
- 6 Sche 1  1  1                                                                         
- 7 Chan       1  1                                                                      
- 8 Comp       1  1                                                                      
- 9 Aver          1  1  1                                                                
-10 Faye          1  1  1                                                                
-11 Math             1     1  1                                                          
-12 Low              1  1  1  1                                                          
-13 St.                    1  1  1  1                                                    
-14 Earl                1              1                                                 
-15 Lewi                                        1                                        
-16 Phil                                     1                                           
-17 Buel                                  1  1                                           
-18 Alma                                  1  1  1                                        
-19 Dodg                                  1  1     1                                     
-20 Kent                                        1     1  1                               
-21 Coll                                                    1  1  1                      
-22 Jour                                              1  1           1                   
-23 Hami                                                             1                   
-24 Lion                                                             1                   
-25 Lern                                                                1                
-26 Butl                                                                1                
-27 Carm                                                                         1       
-
-south
-        1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
- 1 Pupi          1  1  1                                                                
- 2 Scha          1  1  1                                                                
- 3 Mudd                1  1  1                                                          
- 4 Phys                   1  1  1  1                                                    
- 5 Gymn                         1  1  1  1                                              
- 6 Sche                         1  1     1     1                                        
- 7 Chan                               1  1  1                                           
- 8 Comp                               1  1  1                                           
- 9 Aver                                     1                 1                         
-10 Faye                                     1                 1                         
-11 Math                                        1                 1                      
-12 Low                                                  1  1  1                         
-13 St.                                               1  1  1                            
-14 Earl                                           1        1                            
-15 Lewi                                                       1                         
-16 Phil                                                          1                      
-17 Buel                                                          1     1                
-18 Alma                                                             1                   
-19 Dodg                                                             1                   
-20 Kent                                                             1                   
-21 Coll                                                                1  1  1          
-22 Jour                                                                         1  1    
-23 Hami                                                                                 
-24 Lion                                                                                 
-25 Lern                                                                               1 
-26 Butl                                                                                 
-27 Carm                                                                                 
-
-east
-        1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
- 1 Pupi    1        1                                                                   
- 2 Scha       1        1                                                                
- 3 Mudd                                                                                 
- 4 Phys    1        1                       1           1                               
- 5 Gymn       1        1        1                                                       
- 6 Sche                                                                                 
- 7 Chan    1                 1           1                                              
- 8 Comp             1                       1           1                               
- 9 Aver                            1                                                    
-10 Faye                                                                                 
-11 Math                      1                 1                                        
-12 Low                 1        1           1           1        1                      
-13 St.                             1                 1                                  
-14 Earl       1                          1                 1              1             
-15 Lewi                                        1     1                       1          
-16 Phil                                                                                 
-17 Buel                                              1                                  
-18 Alma                                     1           1        1                      
-19 Dodg                                  1           1     1              1  1          
-20 Kent                                                                                 
-21 Coll                                                                                 
-22 Jour                         1                          1                       1    
-23 Hami                                                                                 
-24 Lion                                                                                 
-25 Lern                                     1           1        1                 1    
-26 Butl                                                                   1  1          
-27 Carm                                              1           1                 1    
-
-west
-        1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
- 1 Pupi                                                                                 
- 2 Scha 1        1        1                                                             
- 3 Mudd    1        1                             1                                     
- 4 Phys                                                                                 
- 5 Gymn 1        1           1                 1                                        
- 6 Sche    1        1                    1                             1                
- 7 Chan                                                                                 
- 8 Comp                   1           1                                                 
- 9 Aver          1           1           1                                              
-10 Faye             1           1           1                                           
-11 Math                                                                                 
-12 Low                    1                    1              1                         
-13 St.           1           1           1                 1                            
-14 Earl                               1           1                                     
-15 Lewi                                                                                 
-16 Phil                                     1           1                       1     1 
-17 Buel                      1           1                 1                            
-18 Alma                                        1              1        1                
-19 Dodg                                                                                 
-20 Kent                      1           1        1        1                    1     1 
-21 Coll                                                                                 
-22 Jour                                                                                 
-23 Hami                                        1              1                    1    
-24 Lion                                           1           1                    1    
-25 Lern                                                                                 
-26 Butl                                                                1        1     1 
-27 Carm                                                                                 
-
-near
-        1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
- 1 Pupi    1     1                                                                      
- 2 Scha 1     1  1  1                                                                   
- 3 Mudd    1        1  1                                                                
- 4 Phys 1  1        1     1  1                                                          
- 5 Gymn 1  1  1  1     1  1  1  1        1                                              
- 6 Sche       1     1           1  1                                                    
- 7 Chan          1           1        1                                                 
- 8 Comp             1     1                                                             
- 9 Aver                1                    1                                           
-10 Faye                1                    1                                           
-11 Math                   1                    1                                        
-12 Low                          1                          1                            
-13 St.                          1  1                 1  1                               
-14 Earl                               1           1                                     
-15 Lewi                                        1              1                         
-16 Phil                                     1                    1                      
-17 Buel                                     1                                           
-18 Alma                                                                                 
-19 Dodg                                           1                 1                   
-20 Kent                                              1              1                   
-21 Coll                                                    1  1  1     1  1             
-22 Jour                                                       1     1           1       
-23 Hami                                                          1  1        1     1    
-24 Lion                                                                   1        1    
-25 Lern                                                                1           1  1 
-26 Butl                                                                   1  1  1     1 
-27 Carm                                                                         1  1    
-
-
+           1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
+ 1 Pupin      1     1                                                                      
+ 2 Schapir 1     1  1  1                                                                   
+ 3 Mudd, E    1        1  1                                                                
+ 4 Physica 1  1        1     1                                                             
+ 5 Gymnasi 1  1  1  1     1  1  1  1                                                       
+ 6 Scherme       1     1           1  1                                                    
+ 7 Chandle          1           1        1                                                 
+ 8 Compute             1     1                                                             
+ 9 Avery                  1                    1                                           
+10 Fayerwe                1                    1                                           
+11 Mathema                   1                    1                                        
+12 Low Lib                         1                          1                            
+13 St. Pau                         1  1                 1  1                               
+14 Earl Ha                               1           1                                     
+15 Lewisoh                                        1              1                         
+16 Philoso                                     1                    1                      
+17 Buell &                                     1                                           
+18 Alma Ma                                                                                 
+19 Dodge                                             1                 1                   
+20 Kent                                                 1              1                   
+21 College                                                       1  1     1  1             
+22 Journal                                                       1     1           1       
+23 Hamilto                                                          1  1        1     1    
+24 Lion's                                                                    1        1    
+25 Lerner                                                                 1           1  1 
+26 Butler                                                                    1  1  1     1 
+27 Carman                                                                          1  1    
 
 1:
 South of Pupin is:
 	Physical Fitness Center	1
 	Gymnasium & Uris	2
-	Schermerhorn	3
+East of Pupin is:
+	Schapiro CEPSR	3
 Near to Pupin is:
 	Schapiro CEPSR	4
 	Physical Fitness Center	5
 
 
 2:
-West of Schapiro CEPSR is:
-	Chandler & Havemeyer	6
-Near to Schapiro CEPSR is:
-	Pupin	7
+South of Schapiro CEPSR is:
+	Gymnasium & Uris	6
+	Computer Center	7
+East of Schapiro CEPSR is:
 	Mudd, Engineering Terrace, Fairchild & Computer Science	8
-	Physical Fitness Center	9
-	Gymnasium & Uris	10
+West of Schapiro CEPSR is:
+	Pupin	9
+Near to Schapiro CEPSR is:
+	Pupin	10
+	Mudd, Engineering Terrace, Fairchild & Computer Science	11
+	Physical Fitness Center	12
+	Gymnasium & Uris	13
 
 
 3:
 South of Mudd, Engineering Terrace, Fairchild & Computer Science is:
-	Schermerhorn	11
-	Chandler & Havemeyer	12
-	Computer Center	13
+	Schermerhorn	14
+	Dodge	15
 West of Mudd, Engineering Terrace, Fairchild & Computer Science is:
-	Schapiro CEPSR	14
-	Gymnasium & Uris	15
-	Lewisohn	16
+	Schapiro CEPSR	16
+	Gymnasium & Uris	17
 Near to Mudd, Engineering Terrace, Fairchild & Computer Science is:
-	Schapiro CEPSR	17
-	Gymnasium & Uris	18
-	Schermerhorn	19
+	Schapiro CEPSR	18
+	Gymnasium & Uris	19
+	Schermerhorn	20
 
 
 4:
+North of Physical Fitness Center is:
+	Pupin	21
 South of Physical Fitness Center is:
-	Chandler & Havemeyer	20
-	Computer Center	21
+	Chandler & Havemeyer	22
+	Computer Center	23
+	Buell & Maison Francaise	24
 East of Physical Fitness Center is:
-	Schapiro CEPSR	22
-	Gymnasium & Uris	23
-	St. Paul's Chapel	24
-	Buell & Maison Francaise	25
+	Schapiro CEPSR	25
+	Gymnasium & Uris	26
+	Schermerhorn	27
 Near to Physical Fitness Center is:
-	Pupin	26
-	Schapiro CEPSR	27
-	Gymnasium & Uris	28
-	Chandler & Havemeyer	29
+	Pupin	28
+	Schapiro CEPSR	29
+	Gymnasium & Uris	30
+	Chandler & Havemeyer	31
 
 
 5:
 North of Gymnasium & Uris is:
-	Pupin	30
-	Schapiro CEPSR	31
+	Pupin	32
+	Schapiro CEPSR	33
 South of Gymnasium & Uris is:
-	Avery	32
-	Fayerweather	33
-	Mathematics	34
+	Avery	34
 	Low Library	35
+	Dodge	36
 East of Gymnasium & Uris is:
-	Mudd, Engineering Terrace, Fairchild & Computer Science	36
-	Schermerhorn	37
-	Avery	38
+	Mudd, Engineering Terrace, Fairchild & Computer Science	37
 West of Gymnasium & Uris is:
-	Pupin	39
-	Physical Fitness Center	40
-	Computer Center	41
-	Earl Hall	42
+	Physical Fitness Center	38
+	Chandler & Havemeyer	39
 Near to Gymnasium & Uris is:
-	Pupin	43
-	Schapiro CEPSR	44
-	Mudd, Engineering Terrace, Fairchild & Computer Science	45
-	Physical Fitness Center	46
-	Schermerhorn	47
-	Chandler & Havemeyer	48
-	Computer Center	49
-	Avery	50
+	Pupin	40
+	Schapiro CEPSR	41
+	Mudd, Engineering Terrace, Fairchild & Computer Science	42
+	Physical Fitness Center	43
+	Schermerhorn	44
+	Chandler & Havemeyer	45
+	Computer Center	46
+	Avery	47
 
 
 6:
 North of Schermerhorn is:
-	Mudd, Engineering Terrace, Fairchild & Computer Science	51
+	Schapiro CEPSR	48
+	Mudd, Engineering Terrace, Fairchild & Computer Science	49
 South of Schermerhorn is:
-	Earl Hall	52
+	Avery	50
+	Fayerweather	51
+	Low Library	52
 West of Schermerhorn is:
-	Low Library	53
-	Journalism & Furnald	54
+	Physical Fitness Center	53
+	Computer Center	54
+	Mathematics	55
 Near to Schermerhorn is:
-	Mudd, Engineering Terrace, Fairchild & Computer Science	55
-	Gymnasium & Uris	56
-	Avery	57
-	Fayerweather	58
+	Mudd, Engineering Terrace, Fairchild & Computer Science	56
+	Gymnasium & Uris	57
+	Avery	58
+	Fayerweather	59
 
 
 7:
 North of Chandler & Havemeyer is:
-	Mudd, Engineering Terrace, Fairchild & Computer Science	59
 	Physical Fitness Center	60
 South of Chandler & Havemeyer is:
-	St. Paul's Chapel	61
+	Mathematics	61
+	Alma Mater	62
 East of Chandler & Havemeyer is:
-	Computer Center	62
-	Low Library	63
+	Gymnasium & Uris	63
+	Schermerhorn	64
+	Avery	65
 Near to Chandler & Havemeyer is:
-	Physical Fitness Center	64
-	Computer Center	65
-	Mathematics	66
+	Physical Fitness Center	66
+	Computer Center	67
+	Mathematics	68
 
 
 8:
+North of Computer Center is:
+	Schapiro CEPSR	69
+	Physical Fitness Center	70
+South of Computer Center is:
+	Low Library	71
+	Earl Hall	72
 East of Computer Center is:
-	Gymnasium & Uris	67
-	St. Paul's Chapel	68
-	Buell & Maison Francaise	69
+	Schermerhorn	73
+	Fayerweather	74
 West of Computer Center is:
-	Chandler & Havemeyer	70
-	Mathematics	71
+	Chandler & Havemeyer	75
 Near to Computer Center is:
-	Gymnasium & Uris	72
-	Chandler & Havemeyer	73
+	Gymnasium & Uris	76
+	Chandler & Havemeyer	77
 
 
 9:
 North of Avery is:
-	Physical Fitness Center	74
+	Schermerhorn	78
 South of Avery is:
-	St. Paul's Chapel	75
+	St. Paul's Chapel	79
 East of Avery is:
-	Fayerweather	76
+	Fayerweather	80
+West of Avery is:
+	Computer Center	81
+	Mathematics	82
+	Earl Hall	83
 Near to Avery is:
-	Schermerhorn	77
-	St. Paul's Chapel	78
+	Schermerhorn	84
+	St. Paul's Chapel	85
 
 
 10:
 North of Fayerweather is:
-	Physical Fitness Center	79
-	Gymnasium & Uris	80
-	Schermerhorn	81
+	Schermerhorn	86
 South of Fayerweather is:
-	St. Paul's Chapel	82
-	Dodge	83
+	St. Paul's Chapel	87
 West of Fayerweather is:
-	Gymnasium & Uris	84
-	Avery	85
-	St. Paul's Chapel	86
+	Avery	88
+	Low Library	89
 Near to Fayerweather is:
-	Schermerhorn	87
-	St. Paul's Chapel	88
+	Schermerhorn	90
+	St. Paul's Chapel	91
 
 
 11:
 North of Mathematics is:
-	Gymnasium & Uris	89
-	Chandler & Havemeyer	90
-	Computer Center	91
+	Chandler & Havemeyer	92
 South of Mathematics is:
-	Earl Hall	92
-	Kent	93
+	Earl Hall	93
 East of Mathematics is:
-	Earl Hall	94
+	Schermerhorn	94
+	Low Library	95
 Near to Mathematics is:
-	Chandler & Havemeyer	95
-	Earl Hall	96
+	Chandler & Havemeyer	96
+	Earl Hall	97
 
 
 12:
 North of Low Library is:
-	Gymnasium & Uris	97
-	Schermerhorn	98
-	Chandler & Havemeyer	99
+	Mudd, Engineering Terrace, Fairchild & Computer Science	98
+	Gymnasium & Uris	99
 	Computer Center	100
 South of Low Library is:
-	Buell & Maison Francaise	101
-	Alma Mater	102
-	Dodge	103
+	Alma Mater	101
 East of Low Library is:
-	Schermerhorn	104
-	Avery	105
-	St. Paul's Chapel	106
-	Buell & Maison Francaise	107
-	Kent	108
+	Avery	102
+	St. Paul's Chapel	103
+	Buell & Maison Francaise	104
 West of Low Library is:
-	Chandler & Havemeyer	109
-	Earl Hall	110
-	Dodge	111
+	Mathematics	105
+	Earl Hall	106
+	Lewisohn	107
 Near to Low Library is:
-	Avery	112
-	Alma Mater	113
+	Avery	108
+	Alma Mater	109
 
 
 13:
 North of St. Paul's Chapel is:
-	Chandler & Havemeyer	114
-	Computer Center	115
+	Gymnasium & Uris	110
+	Avery	111
+	Fayerweather	112
+South of St. Paul's Chapel is:
+	Philosophy	113
+	Buell & Maison Francaise	114
+West of St. Paul's Chapel is:
+	Low Library	115
+Near to St. Paul's Chapel is:
 	Avery	116
 	Fayerweather	117
-South of St. Paul's Chapel is:
 	Philosophy	118
 	Buell & Maison Francaise	119
-	Alma Mater	120
-East of St. Paul's Chapel is:
-	Philosophy	121
-West of St. Paul's Chapel is:
-	Physical Fitness Center	122
-	Computer Center	123
-	Low Library	124
-	Alma Mater	125
-Near to St. Paul's Chapel is:
-	Avery	126
-	Fayerweather	127
-	Philosophy	128
-	Buell & Maison Francaise	129
 
 
 14:
 North of Earl Hall is:
-	Schermerhorn	130
-	Mathematics	131
+	Computer Center	120
+	Mathematics	121
 South of Earl Hall is:
-	Lewisohn	132
-	Alma Mater	133
+	Lewisohn	122
 East of Earl Hall is:
-	Mudd, Engineering Terrace, Fairchild & Computer Science	134
-	Low Library	135
-	Alma Mater	136
-	Hamilton, Hartley, Wallach & John Jay	137
-West of Earl Hall is:
-	Mathematics	138
-	Lewisohn	139
+	Low Library	123
 Near to Earl Hall is:
-	Mathematics	140
-	Lewisohn	141
+	Mathematics	124
+	Lewisohn	125
 
 
 15:
 North of Lewisohn is:
-	Earl Hall	142
+	Earl Hall	126
 South of Lewisohn is:
-	Dodge	143
+	Dodge	127
 East of Lewisohn is:
-	Earl Hall	144
+	Low Library	128
+	Alma Mater	129
 Near to Lewisohn is:
-	Earl Hall	145
-	Dodge	146
+	Earl Hall	130
+	Dodge	131
 
 
 16:
 North of Philosophy is:
-	St. Paul's Chapel	147
+	St. Paul's Chapel	132
 South of Philosophy is:
-	Kent	148
+	Kent	133
 West of Philosophy is:
-	St. Paul's Chapel	149
-	Buell & Maison Francaise	150
+	Low Library	134
+	Alma Mater	135
 Near to Philosophy is:
-	St. Paul's Chapel	151
-	Kent	152
+	St. Paul's Chapel	136
+	Kent	137
 
 
 17:
 North of Buell & Maison Francaise is:
-	Low Library	153
-	St. Paul's Chapel	154
+	St. Paul's Chapel	138
 South of Buell & Maison Francaise is:
-	Kent	155
-	Journalism & Furnald	156
+	Kent	139
+East of Buell & Maison Francaise is:
+	Philosophy	140
+West of Buell & Maison Francaise is:
+	Earl Hall	141
+	Alma Mater	142
 Near to Buell & Maison Francaise is:
-	St. Paul's Chapel	157
+	St. Paul's Chapel	143
 
 
 18:
 North of Alma Mater is:
-	Low Library	158
-	St. Paul's Chapel	159
-	Earl Hall	160
+	Low Library	144
 South of Alma Mater is:
-	College Walk	161
+	College Walk	145
+East of Alma Mater is:
+	Philosophy	146
+	Kent	147
 West of Alma Mater is:
-	Journalism & Furnald	162
+	Lewisohn	148
+	Dodge	149
 
 
 19:
 North of Dodge is:
-	Low Library	163
-	St. Paul's Chapel	164
-	Lewisohn	165
+	Gymnasium & Uris	150
+	Lewisohn	151
 South of Dodge is:
-	College Walk	166
+	College Walk	152
 East of Dodge is:
-	Low Library	167
-	Philosophy	168
-	Hamilton, Hartley, Wallach & John Jay	169
-	Lion's Court	170
+	Alma Mater	153
 Near to Dodge is:
-	Lewisohn	171
-	College Walk	172
+	Lewisohn	154
+	College Walk	155
 
 
 20:
 North of Kent is:
-	Earl Hall	173
-	Philosophy	174
-	Buell & Maison Francaise	175
+	Philosophy	156
+	Buell & Maison Francaise	157
 South of Kent is:
-	College Walk	176
+	College Walk	158
 West of Kent is:
-	Computer Center	177
-	Low Library	178
-	Lewisohn	179
-	Alma Mater	180
-	Lerner Hall	181
-	Carman	182
+	Alma Mater	159
 Near to Kent is:
-	Philosophy	183
-	College Walk	184
+	Philosophy	160
+	College Walk	161
 
 
 21:
 North of College Walk is:
-	Alma Mater	185
-	Dodge	186
-	Kent	187
+	Alma Mater	162
+	Dodge	163
+	Kent	164
 South of College Walk is:
-	Journalism & Furnald	188
-	Hamilton, Hartley, Wallach & John Jay	189
-	Lion's Court	190
+	Journalism & Furnald	165
+	Hamilton, Hartley, Wallach & John Jay	166
+	Lion's Court	167
+	Butler Library	168
 Near to College Walk is:
-	Dodge	191
-	Kent	192
-	Journalism & Furnald	193
-	Hamilton, Hartley, Wallach & John Jay	194
+	Dodge	169
+	Kent	170
+	Journalism & Furnald	171
+	Hamilton, Hartley, Wallach & John Jay	172
 
 
 22:
 North of Journalism & Furnald is:
-	Philosophy	195
-	Buell & Maison Francaise	196
-	College Walk	197
+	College Walk	173
 South of Journalism & Furnald is:
-	Lerner Hall	198
-	Butler Library	199
+	Lerner Hall	174
 East of Journalism & Furnald is:
-	Avery	200
-	Alma Mater	201
-	Butler Library	202
+	Kent	175
+	Hamilton, Hartley, Wallach & John Jay	176
+	Lion's Court	177
 Near to Journalism & Furnald is:
-	Dodge	203
-	College Walk	204
-	Lerner Hall	205
+	Dodge	178
+	College Walk	179
+	Lerner Hall	180
 
 
 23:
 North of Hamilton, Hartley, Wallach & John Jay is:
-	College Walk	206
+	College Walk	181
 West of Hamilton, Hartley, Wallach & John Jay is:
-	Earl Hall	207
-	Dodge	208
-	Butler Library	209
+	Dodge	182
+	Journalism & Furnald	183
+	Lerner Hall	184
+	Carman	185
 Near to Hamilton, Hartley, Wallach & John Jay is:
-	Kent	210
-	College Walk	211
-	Lion's Court	212
-	Butler Library	213
+	Kent	186
+	College Walk	187
+	Lion's Court	188
+	Butler Library	189
 
 
 24:
+North of Lion's Court is:
+	College Walk	190
 West of Lion's Court is:
-	Lewisohn	214
+	Lerner Hall	191
+	Carman	192
 Near to Lion's Court is:
-	Hamilton, Hartley, Wallach & John Jay	215
-	Butler Library	216
+	Hamilton, Hartley, Wallach & John Jay	193
+	Butler Library	194
 
 
 25:
+North of Lerner Hall is:
+	Journalism & Furnald	195
 South of Lerner Hall is:
-	Carman	217
+	Carman	196
 East of Lerner Hall is:
-	St. Paul's Chapel	218
-	Buell & Maison Francaise	219
-	Kent	220
+	Butler Library	197
 Near to Lerner Hall is:
-	Journalism & Furnald	221
-	Butler Library	222
-	Carman	223
+	Journalism & Furnald	198
+	Butler Library	199
+	Carman	200
 
 
 26:
 North of Butler Library is:
-	Journalism & Furnald	224
+	College Walk	201
 East of Butler Library is:
-	Hamilton, Hartley, Wallach & John Jay	225
-	Lion's Court	226
+	Hamilton, Hartley, Wallach & John Jay	202
+	Lion's Court	203
 West of Butler Library is:
-	Journalism & Furnald	227
-	Lerner Hall	228
-	Carman	229
+	Lerner Hall	204
+	Carman	205
 Near to Butler Library is:
-	Hamilton, Hartley, Wallach & John Jay	230
-	Lion's Court	231
-	Lerner Hall	232
-	Carman	233
+	Hamilton, Hartley, Wallach & John Jay	206
+	Lion's Court	207
+	Lerner Hall	208
+	Carman	209
 
 
 27:
 North of Carman is:
-	Lerner Hall	234
+	Lerner Hall	210
 East of Carman is:
-	Philosophy	235
-	Butler Library	236
+	Butler Library	211
 Near to Carman is:
-	Lerner Hall	237
-	Butler Library	238
+	Lerner Hall	212
+	Butler Library	213
 

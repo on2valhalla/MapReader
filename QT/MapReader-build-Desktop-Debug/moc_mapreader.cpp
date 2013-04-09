@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mapreader.h'
 **
-** Created: Mon Apr 8 14:05:01 2013
+** Created: Tue Apr 9 00:16:26 2013
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.4)
 **
 ** WARNING! All changes made in this file will be lost!

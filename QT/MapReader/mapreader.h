@@ -30,6 +30,11 @@ struct Building {
 	Moments mom;
 	Point centerOfMass;
 	vector<Point> contour;
+	unordered_set< int > north;
+	unordered_set< int > south;
+	unordered_set< int > east;
+	unordered_set< int > west;
+	unordered_set< int > near;
 	Rect MBR;
 	string description;
 
@@ -107,10 +112,12 @@ public:
 
 	void findRelations();
 	void printRelations(const vector< vector< bool > > &rel);
+	void printRelations();
 	void printBinaryPairs();
 
 	vector<Point> findCloud(const Point &pt, const vector<unordered_set<int> > &features);
 	void drawCloud(vector<Point> cloud);
+	void printFeatures(const Point &pt, const vector< unordered_set< int > > &features);
 
     void clicked(QMouseEvent *e);
 
@@ -130,6 +137,7 @@ private:
 	vector< vector< bool > > eastR;
 	vector< vector< bool > > westR;
 	vector< vector< bool > > nearR;
+
 	int minArea, maxArea, avgArea, areaRange;
 };
 

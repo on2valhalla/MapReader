@@ -127,7 +127,8 @@ void MapReader::describeBuildings()
 	for( uchar i = 0; i < buildings.size(); i++)
 	{
 		Building &b = buildings[i];
-		b.description = "The ";
+		// b.description = "the ";
+		b.description = "";
 		int centerx = b.MBR.x + b.MBR.width/2, centery = b.MBR.y + b.MBR.height/2;
 
 		//FIND SHAPE DESCRIPTORS
@@ -174,7 +175,7 @@ void MapReader::describeBuildings()
 							&& campusImage.at<uchar>(centery, b.MBR.x + b.MBR.width - 1) == 0)
 					||(campusImage.at<uchar>(b.MBR.y + 1, centerx) == 0
 							&& campusImage.at<uchar>(b.MBR.y + b.MBR.height - 1, centerx) == 0) )
-			b.description += "H-shaped, ";
+			b.description += "I-shaped, ";
 		else if( campusImage.at<uchar>(b.MBR.y + 2, b.MBR.x + 2) == 0
 					&& campusImage.at<uchar>(b.MBR.y + 2, b.MBR.x + b.MBR.width - 2) == 0
 					&& campusImage.at<uchar>(b.MBR.y + b.MBR.height - 2, b.MBR.x + 2) == 0
@@ -198,51 +199,53 @@ void MapReader::describeBuildings()
 
 		// FIND SIZE DESCRIPTORS
 		if( b.mom.m00 > avgArea + areaRange / 6)
-			b.description += "large, ";
+			b.description += "large";
 		else if( b.mom.m00 < avgArea - areaRange / 4)
-			b.description += "small, ";
+			b.description += "small";
 		else
-			b.description += "medium sized, ";
+			b.description += "medium sized";
 
 
 		//ORIENTATION descriptors
 		if (b.MBR.width > b.MBR.height * 1.5)
-			b.description += "east to west oriented, ";
+			b.description += ", east to west oriented structure";
 		else if ( b.MBR.height > b.MBR.width * 1.5)
-			b.description += "north to south oriented, ";
-
-	   // LOCATION descriptors
-		string ending = "erly ";
-		if (b.centerOfMass.y < campusImage.rows / 3)
-		{
-			b.description += "north";
-			if(b.centerOfMass.x < campusImage.cols / 3)
-				b.description += "-west";
-			if(b.centerOfMass.x > campusImage.cols - campusImage.cols / 3)
-				b.description += "-east";
-		}
-		else if (b.centerOfMass.y > campusImage.rows - campusImage.rows / 3)
-		{
-			b.description += "south";
-			if(b.centerOfMass.x < campusImage.cols / 3)
-				b.description += "-west";
-			if(b.centerOfMass.x > campusImage.cols - campusImage.cols / 3)
-				b.description += "-east";
-		}
-		else if(b.centerOfMass.x < campusImage.cols / 3)
-			b.description += "west";
-	   else  if(b.centerOfMass.x > campusImage.cols - campusImage.cols / 3)
-			b.description += "east";
+			b.description += ", north to south oriented structure";
 		else
-		{
-			ending = " ";
-			b.description += "centered";
-		}
+			b.description += " structure";
+
+	 //   // LOCATION descriptors
+		// string ending = "erly ";
+		// if (b.centerOfMass.y < campusImage.rows / 3)
+		// {
+		// 	b.description += "north";
+		// 	if(b.centerOfMass.x < campusImage.cols / 3)
+		// 		b.description += "-west";
+		// 	if(b.centerOfMass.x > campusImage.cols - campusImage.cols / 3)
+		// 		b.description += "-east";
+		// }
+		// else if (b.centerOfMass.y > campusImage.rows - campusImage.rows / 3)
+		// {
+		// 	b.description += "south";
+		// 	if(b.centerOfMass.x < campusImage.cols / 3)
+		// 		b.description += "-west";
+		// 	if(b.centerOfMass.x > campusImage.cols - campusImage.cols / 3)
+		// 		b.description += "-east";
+		// }
+		// else if(b.centerOfMass.x < campusImage.cols / 3)
+		// 	b.description += "west";
+	 //   else  if(b.centerOfMass.x > campusImage.cols - campusImage.cols / 3)
+		// 	b.description += "east";
+		// else
+		// {
+		// 	ending = " ";
+		// 	b.description += "centered";
+		// }
 
 
-		b.description += ending + "structure";
+		// b.description += ending + "structure";
 
-	   // cout  << (int) b.number << " "<< b.name << "\n  " <<  b.description << endl << endl;
+		cout << b << endl;
 	}
 
 }
@@ -276,10 +279,10 @@ bool MapReader::north(const Building &s, const Building &g)
 	if((g.MBR.width > campusImage.cols *.9 || s.MBR.width > campusImage.cols * .9)
 			&& g.MBR.y + g.MBR.height < s.MBR.y)
 		return true;
-	if(g.MBR.y + g.MBR.height * .80 < s.MBR.y
-				&& (abs(g.centerOfMass.x - s.centerOfMass.x) * .5 < abs(g.centerOfMass.y - s.centerOfMass.y)
-					|| abs(g.centerOfMass.x - s.MBR.x) * .5 < abs(g.centerOfMass.y - s.centerOfMass.y)
-					|| abs(g.centerOfMass.x - (s.MBR.x + s.MBR.width)) * .5 < abs(g.centerOfMass.y - s.centerOfMass.y)))
+	if(g.MBR.y + g.MBR.height * .8 < s.MBR.y
+				&& (abs(g.centerOfMass.x - s.centerOfMass.x) * 2 < abs(g.centerOfMass.y - s.centerOfMass.y)
+					|| abs(g.centerOfMass.x - s.MBR.x) * 2 < abs(g.centerOfMass.y - s.centerOfMass.y)
+					|| abs(g.centerOfMass.x - (s.MBR.x + s.MBR.width)) * 2 < abs(g.centerOfMass.y - s.centerOfMass.y)))
 			return true;
 	else
 		return false;
@@ -289,10 +292,10 @@ bool MapReader::south(const Building &s, const Building &g)
 	if((g.MBR.width > campusImage.cols *.9 || s.MBR.width > campusImage.cols * .9)
 			&& g.MBR.y > s.MBR.y + s.MBR.height)
 		return true;
-	if(g.MBR.y  > s.MBR.y + s.MBR.height * .80
-				&& (abs(g.centerOfMass.x - s.centerOfMass.x) * .5 < abs(g.centerOfMass.y - s.centerOfMass.y)
-					|| abs(g.centerOfMass.x - s.MBR.x) * .5 < abs(g.centerOfMass.y - s.centerOfMass.y)
-					|| abs(g.centerOfMass.x - (s.MBR.x + s.MBR.width)) * .5 < abs(g.centerOfMass.y - s.centerOfMass.y)))
+	if(g.MBR.y  > s.MBR.y + s.MBR.height * .8
+				&& (abs(g.centerOfMass.x - s.centerOfMass.x) * 2 < abs(g.centerOfMass.y - s.centerOfMass.y)
+					|| abs(g.centerOfMass.x - s.MBR.x) * 2 < abs(g.centerOfMass.y - s.centerOfMass.y)
+					|| abs(g.centerOfMass.x - (s.MBR.x + s.MBR.width)) * 2 < abs(g.centerOfMass.y - s.centerOfMass.y)))
 		return true;
 	else
 		return false;
@@ -301,10 +304,10 @@ bool MapReader::east(const Building &s, const Building &g)
 {
 	if(g.MBR.width > campusImage.cols *.9 || s.MBR.width > campusImage.cols * .9)
 		return false;
-	if(g.MBR.x  > s.MBR.x + s.MBR.width * .80
-				&& (abs(g.centerOfMass.y - s.centerOfMass.y) < abs(g.centerOfMass.x - s.centerOfMass.x)
-					|| abs(g.centerOfMass.y - s.centerOfMass.y) < abs(g.centerOfMass.x - s.MBR.x)
-					|| abs(g.centerOfMass.y - s.centerOfMass.y) < abs(g.centerOfMass.x - (s.MBR.x + s.MBR.width))))
+	if(g.MBR.x  > s.MBR.x + s.MBR.width * .8
+				&& (abs(g.centerOfMass.y - s.centerOfMass.y) * 5 < abs(g.centerOfMass.x - s.centerOfMass.x)
+					|| abs(g.centerOfMass.y - s.MBR.y) * 5 < abs(g.centerOfMass.x - s.centerOfMass.x)
+					|| abs(g.centerOfMass.y - (s.MBR.y + s.MBR.height)) * 5 < abs(g.centerOfMass.x - s.centerOfMass.x)))
 		return true;
 	else
 		return false;
@@ -313,10 +316,10 @@ bool MapReader::west(const Building &s, const Building &g)
 {
 	if(g.MBR.width > campusImage.cols *.9 || s.MBR.width > campusImage.cols * .9)
 		return false;
-	if(g.MBR.x + g.MBR.width * .80 < s.MBR.x 
-				&& (abs(g.centerOfMass.y - s.centerOfMass.y) < abs(g.centerOfMass.x - s.centerOfMass.x)
-					|| abs(g.centerOfMass.y - s.centerOfMass.y) < abs(g.centerOfMass.x - s.MBR.x)
-					|| abs(g.centerOfMass.y - s.centerOfMass.y) < abs(g.centerOfMass.x - (s.MBR.x + s.MBR.width))))
+	if(g.MBR.x + g.MBR.width * .8 < s.MBR.x 
+				&& (abs(g.centerOfMass.y - s.centerOfMass.y) * 5 < abs(g.centerOfMass.x - s.centerOfMass.x)
+					|| abs(g.centerOfMass.y - s.MBR.y) * 5 < abs(g.centerOfMass.x - s.centerOfMass.x)
+					|| abs(g.centerOfMass.y - (s.MBR.y + s.MBR.height)) * 5 < abs(g.centerOfMass.x - s.centerOfMass.x)))
 		return true;
 	else
 		return false;
@@ -412,19 +415,33 @@ void MapReader::findRelations()
 		}
 	}
 
+	for(uchar i = 0; i < buildings.size(); i++)
+		for(uchar j = 0; j < buildings.size(); j++)
+		{
+			if( northR[i][j] )
+				buildings[i].north.insert(j);
+			if( southR[i][j] )
+				buildings[i].south.insert(j);
+			if( eastR[i][j] )
+				buildings[i].east.insert(j);
+			if( westR[i][j] )
+				buildings[i].west.insert(j);
+			if( nearR[i][j] )
+				buildings[i].near.insert(j);
+		}
 
 
-	// cout << "\n\n\nCOMPLETE\n";
-	// cout << "north\n";
-	// printRelations(northR);
-	// cout << "south\n";
-	// printRelations(southR);
-	// cout << "east\n";
-	// printRelations(eastR);
-	// cout << "west\n";
-	// printRelations(westR);
-	// cout << "near\n";
-	// printRelations(nearR);
+	cout << "\n\n\nCOMPLETE\n";
+	cout << "north\n";
+	printRelations(northR);
+	cout << "south\n";
+	printRelations(southR);
+	cout << "east\n";
+	printRelations(eastR);
+	cout << "west\n";
+	printRelations(westR);
+	cout << "near\n";
+	printRelations(nearR);
 
 
 	// eliminate duplicate compass relations via transitivity
@@ -432,87 +449,74 @@ void MapReader::findRelations()
 		for(uchar j = 0; j < buildings.size(); j++)
 		{
 			if(i == j)
-			{
-				northR[i][j] = false;
-				southR[i][j] = false;
-				eastR[i][j] = false;
-				westR[i][j] = false;
-				nearR[i][j] = false;
 				continue;
-			}
 
 			if( northR[i][j] )
 				for( uchar k = 0; k < buildings.size(); k++ )
 					if( northR[j][k] )
-						northR[i][k] = false;
+						buildings[i].north.erase(k);
 			if( southR[i][j] )
 				for( uchar k = 0; k < buildings.size(); k++ )
 					if( southR[j][k] )
-						southR[i][k] = false;
+						buildings[i].south.erase(k);
 			if( eastR[i][j] )
 				for( uchar k = 0; k < buildings.size(); k++ )
 					if( eastR[j][k] )
-						eastR[i][k] = false;
+						buildings[i].east.erase(k);
 			if( westR[i][j] )
 				for( uchar k = 0; k < buildings.size(); k++ )
 					if( westR[j][k] )
-						westR[i][k] = false;
+						buildings[i].west.erase(k);
 		}
 
-	// eliminate further duplicates from near relations
-	for(uchar i = 0; i < buildings.size(); i++)
-		for(uchar j = 0; j < buildings.size(); j++)
-			if( nearR[i][j] )
-				for( uchar k = 0; k < buildings.size(); k++ )
-				{
-					if( northR[i][k] && northR[j][k] )
-					{
-						if( buildings[i].mom.m00 < buildings[j].mom.m00 )
-							northR[i][k] = false;
-						else
-							northR[j][k] = false;
-					}
-					if( southR[i][k] && southR[j][k] )
-					{
-						if( buildings[i].mom.m00 < buildings[j].mom.m00 )
-							southR[i][k] = false;
-						else
-							southR[j][k] = false;
-					}
-					if( eastR[i][k] && eastR[j][k] )
-					{
-						if( buildings[i].mom.m00 < buildings[j].mom.m00 )
-							eastR[i][k] = false;
-						else
-							eastR[j][k] = false;
-					}
-					if( westR[i][k] && westR[j][k] )
-					{
-						if( buildings[i].mom.m00 < buildings[j].mom.m00 )
-							westR[i][k] = false;
-						else
-							westR[j][k] = false;
-					}
-				}
+	// // eliminate further duplicates from near relations
+	// for(uchar i = 0; i < buildings.size(); i++)
+	// 	for(uchar j = 0; j < buildings.size(); j++)
+	// 		if( nearR[i][j] )
+	// 			for( uchar k = 0; k < buildings.size(); k++ )
+	// 			{
+	// 				if( buildings[i].north.count(k) > 0 
+	// 									&& buildings[j].north.count(k) > 0 )
+	// 				{
+	// 					if( buildings[i].mom.m00 < buildings[j].mom.m00 )
+	// 						buildings[i].north.erase(k);
+	// 					else
+	// 						buildings[j].north.erase(k);
+	// 				}
+	// 				if( buildings[i].south.count(k) > 0 
+	// 									&& buildings[j].south.count(k) > 0 )
+	// 				{
+	// 					if( buildings[i].mom.m00 < buildings[j].mom.m00 )
+	// 						buildings[i].south.erase(k);
+	// 					else
+	// 						buildings[j].south.erase(k);
+	// 				}
+	// 				if( buildings[i].east.count(k) > 0
+	// 									&& buildings[j].east.count(k) > 0 )
+	// 				{
+	// 					if( buildings[i].mom.m00 < buildings[j].mom.m00 )
+	// 						buildings[i].east.erase(k);
+	// 					else
+	// 						buildings[j].east.erase(k);
+	// 				}
+	// 				if( buildings[i].west.count(k) > 0
+	// 									&& buildings[j].west.count(k) > 0 )
+	// 				{
+	// 					if( buildings[i].mom.m00 < buildings[j].mom.m00 )
+	// 						buildings[i].west.erase(k);
+	// 					else
+	// 						buildings[j].west.erase(k);
+	// 				}
+	// 			}
 
-	// cout << "\n\n\nMINIMIZED\n";
-	// cout << "north\n";
-	// printRelations(northR);
-	// cout << "south\n";
-	// printRelations(southR);
-	// cout << "east\n";
-	// printRelations(eastR);
-	// cout << "west\n";
-	// printRelations(westR);
-	// cout << "near\n";
-	// printRelations(nearR);
+	cout << "\n\n\nMINIMIZED\n";
+	printRelations();
 }
 
 
 void MapReader::printRelations(const vector< vector< bool > > &rel)
 {
-	// COMPLETE RELATIONS
-	cout << "       ";
+	cout << "          ";
 
 	for(uchar i = 0; i < buildings.size() ; i++)
 	{
@@ -530,11 +534,185 @@ void MapReader::printRelations(const vector< vector< bool > > &rel)
 			cout << " " << i+1 << " " ;
 		else
 			cout << i+1 << " " ;
-		cout << buildings[i].name.substr(0,4);
+		cout << buildings[i].name.substr(0,7);
+		int buffer = 7 - buildings[i].name.size();
+		for (int i = 0; i < buffer; ++i)
+			cout << " ";
+
 		for( uchar j = 0; j < buildings.size(); j++)
 		{
 			if (rel[i][j])
 				cout << " " << rel[i][j] << " ";
+			else
+				cout << "   ";
+		}
+		cout << endl;
+	}
+	cout << endl;
+}
+
+
+void MapReader::printRelations()
+{
+	cout << "NORTH\n          ";
+
+	for(uchar i = 0; i < buildings.size() ; i++)
+	{
+		if(i < 9)
+			cout << " " << i+1 << " ";
+		else
+			cout << " " << i+1;
+	}
+
+	cout << endl;
+
+	for(uchar i = 0; i < buildings.size() ; i++)
+	{
+		if(i < 9)
+			cout << " " << i+1 << " " ;
+		else
+			cout << i+1 << " " ;
+		cout << buildings[i].name.substr(0,7);
+		int buffer = 7 - buildings[i].name.size();
+		for (int i = 0; i < buffer; ++i)
+			cout << " ";
+
+		for( uchar j = 0; j < buildings.size(); j++)
+		{
+			if ( buildings[i].north.count(j) > 0 )
+				cout << " " << 1 << " ";
+			else
+				cout << "   ";
+		}
+		cout << endl;
+	}
+	cout << endl;
+	cout << "SOUTH\n          ";
+
+	for(uchar i = 0; i < buildings.size() ; i++)
+	{
+		if(i < 9)
+			cout << " " << i+1 << " ";
+		else
+			cout << " " << i+1;
+	}
+
+	cout << endl;
+
+	for(uchar i = 0; i < buildings.size() ; i++)
+	{
+		if(i < 9)
+			cout << " " << i+1 << " " ;
+		else
+			cout << i+1 << " " ;
+		cout << buildings[i].name.substr(0,7);
+		int buffer = 7 - buildings[i].name.size();
+		for (int i = 0; i < buffer; ++i)
+			cout << " ";
+
+		for( uchar j = 0; j < buildings.size(); j++)
+		{
+			if ( buildings[i].south.count(j) > 0 )
+				cout << " " << 1 << " ";
+			else
+				cout << "   ";
+		}
+		cout << endl;
+	}
+	cout << endl;
+	cout << "EAST\n          ";
+
+	for(uchar i = 0; i < buildings.size() ; i++)
+	{
+		if(i < 9)
+			cout << " " << i+1 << " ";
+		else
+			cout << " " << i+1;
+	}
+
+	cout << endl;
+
+	for(uchar i = 0; i < buildings.size() ; i++)
+	{
+		if(i < 9)
+			cout << " " << i+1 << " " ;
+		else
+			cout << i+1 << " " ;
+		cout << buildings[i].name.substr(0,7);
+		int buffer = 7 - buildings[i].name.size();
+		for (int i = 0; i < buffer; ++i)
+			cout << " ";
+
+		for( uchar j = 0; j < buildings.size(); j++)
+		{
+			if ( buildings[i].east.count(j) > 0 )
+				cout << " " << 1 << " ";
+			else
+				cout << "   ";
+		}
+		cout << endl;
+	}
+	cout << endl;
+	cout << "WEST\n          ";
+
+	for(uchar i = 0; i < buildings.size() ; i++)
+	{
+		if(i < 9)
+			cout << " " << i+1 << " ";
+		else
+			cout << " " << i+1;
+	}
+
+	cout << endl;
+
+	for(uchar i = 0; i < buildings.size() ; i++)
+	{
+		if(i < 9)
+			cout << " " << i+1 << " " ;
+		else
+			cout << i+1 << " " ;
+		cout << buildings[i].name.substr(0,7);
+		int buffer = 7 - buildings[i].name.size();
+		for (int i = 0; i < buffer; ++i)
+			cout << " ";
+
+		for( uchar j = 0; j < buildings.size(); j++)
+		{
+			if ( buildings[i].west.count(j) > 0 )
+				cout << " " << 1 << " ";
+			else
+				cout << "   ";
+		}
+		cout << endl;
+	}
+	cout << endl;
+	cout << "NEAR\n          ";
+
+	for(uchar i = 0; i < buildings.size() ; i++)
+	{
+		if(i < 9)
+			cout << " " << i+1 << " ";
+		else
+			cout << " " << i+1;
+	}
+
+	cout << endl;
+
+	for(uchar i = 0; i < buildings.size() ; i++)
+	{
+		if(i < 9)
+			cout << " " << i+1 << " " ;
+		else
+			cout << i+1 << " " ;
+		cout << buildings[i].name.substr(0,7);
+		int buffer = 7 - buildings[i].name.size();
+		for (int i = 0; i < buffer; ++i)
+			cout << " ";
+
+		for( uchar j = 0; j < buildings.size(); j++)
+		{
+			if ( buildings[i].near.count(j) > 0 )
+				cout << " " << 1 << " ";
 			else
 				cout << "   ";
 		}
@@ -550,39 +728,39 @@ void MapReader::printBinaryPairs()
 	for(uchar i = 0; i < buildings.size(); i++)
 	{
 		cout << (int)buildings[i].number << ":\n";
-		if(std::find(northR[i].begin(), northR[i].end(), true) != northR[i].end())
+		if(buildings[i].north.size() > 0 )
 		{
 			cout << "North of " << buildings[i].name << " is:\n";
 			for(uchar j = 0; j <buildings.size(); j++)
-				if( northR[i][j] )
+				if( buildings[i].north.count(j) > 0 )
 					cout << "\t" << buildings[j].name << "\t" << relCount++ << endl;
 		}
-		if(std::find(southR[i].begin(), southR[i].end(), true) != southR[i].end())
+		if(buildings[i].south.size() > 0 )
 		{
 			cout << "South of " << buildings[i].name << " is:\n";
 			for(uchar j = 0; j <buildings.size(); j++)
-				if( southR[i][j] )
+				if( buildings[i].south.count(j) > 0 )
 					cout << "\t" << buildings[j].name << "\t" << relCount++ << endl;
 		}
-		if(std::find(eastR[i].begin(), eastR[i].end(), true) != eastR[i].end())
+		if(buildings[i].east.size() > 0 )
 		{
 			cout << "East of " << buildings[i].name << " is:\n";
 			for(uchar j = 0; j <buildings.size(); j++)
-				if( eastR[i][j] )
+				if( buildings[i].east.count(j) > 0 )
 					cout << "\t" << buildings[j].name << "\t" << relCount++ << endl;
 		}
-		if(std::find(westR[i].begin(), westR[i].end(), true) != westR[i].end())
+		if(buildings[i].west.size() > 0 )
 		{
 			cout << "West of " << buildings[i].name << " is:\n";
 			for(uchar j = 0; j <buildings.size(); j++)
-				if( westR[i][j] )
+				if( buildings[i].west.count(j) > 0 )
 					cout << "\t" << buildings[j].name << "\t" << relCount++ << endl;
 		}
-		if(std::find(nearR[i].begin(), nearR[i].end(), true) != nearR[i].end())
+		if(buildings[i].near.size() > 0 )
 		{
 			cout << "Near to " << buildings[i].name << " is:\n";
 			for(uchar j = 0; j <buildings.size(); j++)
-				if( nearR[i][j] )
+				if( buildings[i].near.count(j) > 0 )
 					cout << "\t" << buildings[j].name << "\t" << relCount++ << endl;
 		}
 		cout << endl << endl;
@@ -592,19 +770,58 @@ void MapReader::printBinaryPairs()
 
 
 
-// void printFeatures(const vector< vector< int > > &features)
-// {
-//     QDebug debugMessage(QtDebugMsg);
-//     for(int i = 0; i < features.size(); i++)
-//     {
-//         debugMessage << i << ":\n";
-//         for(int j = 0; j < features[i].size(); j++)
-//         {
-//             debugMessage << "\t" << features[i][j];
-//         }
-//         debugMessage << "\n";
-//     }
-// }
+void MapReader::printFeatures(const Point &pt, const vector< unordered_set< int > > &features)
+{
+	QDebug debugMessage(QtDebugMsg);
+	uchar i = 0;
+
+	debugMessage << "(" << pt.x << ", " << pt.y << ") is ";
+	
+	if(features[0].size() > 0)
+		debugMessage << "NEAR ";
+		for(auto i = features[0].begin(); i != features[0].end(); i++)
+			debugMessage << buildings[*i].name.c_str() << ", ";
+
+
+	if(i > 0)
+		debugMessage << "and ";
+	i=0;
+	
+	if(features[1].size() > 0)
+		debugMessage << "NORTH of ";
+	for(auto i = features[1].begin(); i != features[1].end(); i++)
+		debugMessage << buildings[*i].name.c_str() << ", ";
+
+
+	if(i > 0)
+		debugMessage << "and ";
+	i=0;
+	
+	if(features[2].size() > 0)
+		debugMessage << "SOUTH of ";
+	for(auto i = features[2].begin(); i != features[2].end(); i++)
+		debugMessage << buildings[*i].name.c_str() << ", ";
+
+
+	if(i > 0)
+		debugMessage << "and ";
+	i=0;
+	
+	if(features[3].size() > 0)
+		debugMessage << "EAST of ";
+	for(auto i = features[3].begin(); i != features[3].end(); i++)
+		debugMessage << buildings[*i].name.c_str() << ", ";
+
+
+	if(i > 0)
+		debugMessage << "and ";
+	i=0;
+	
+	if(features[4].size() > 0)
+		debugMessage << "WEST of ";
+	for(auto i = features[4].begin(); i != features[4].end(); i++)
+		debugMessage << buildings[*i].name.c_str() << ", ";
+}
 
 
 vector<Point> MapReader::findCloud(const Point &pt, 
@@ -623,24 +840,24 @@ vector<Point> MapReader::findCloud(const Point &pt,
 	{
 		curPoint = children.front();
 		children.pop();
-        if(seen.find(curPoint) != seen.end())
+		if(seen.find(curPoint) != seen.end())
 			continue;
 
 		cloud.push_back(curPoint);
 		seen.insert(curPoint);
 		bool brk = false;
 
-		Building buildPt(curPoint, avgArea);
+		Building buildPt(curPoint, minArea);
 
-        // printFeatures(features);
-        bool feature, contained;
+		// printFeatures(features);
+		bool feature, contained;
 
 		for(uchar i = 0; i < buildings.size(); i++)
 		{
 			if(features[0].size() > 0)
 			{
 				feature = near( buildings[i], buildPt );
-				contained = features[0].find(i+1) != features[0].end();
+				contained = features[0].find(i) != features[0].end();
 				if( (feature && !contained) || (!feature && contained) )
 				{
 					cloud.pop_back();
@@ -652,7 +869,7 @@ vector<Point> MapReader::findCloud(const Point &pt,
 			if(features[1].size() > 0)
 			{
 				feature = north( buildings[i], buildPt );
-				contained = features[1].find(i+1) != features[1].end();
+				contained = features[1].find(i) != features[1].end();
 				if( (feature && !contained) || (!feature && contained) )
 				{
 					cloud.pop_back();
@@ -664,7 +881,7 @@ vector<Point> MapReader::findCloud(const Point &pt,
 			if(features[2].size() > 0)
 			{
 				feature = south( buildings[i], buildPt );
-				contained = features[2].find(i+1) != features[2].end();
+				contained = features[2].find(i) != features[2].end();
 				if( (feature && !contained) || (!feature && contained) )
 				{
 					cloud.pop_back();
@@ -676,7 +893,7 @@ vector<Point> MapReader::findCloud(const Point &pt,
 			if(features[3].size() > 0)
 			{	
 				feature = east( buildings[i], buildPt );
-				contained = features[3].find(i+1) != features[3].end();
+				contained = features[3].find(i) != features[3].end();
 				if( (feature && !contained) || (!feature && contained) )
 				{
 					cloud.pop_back();
@@ -688,7 +905,7 @@ vector<Point> MapReader::findCloud(const Point &pt,
 			if(features[4].size() > 0)
 			{
 				feature = west( buildings[i], buildPt );
-				contained = features[4].find(i+1) != features[4].end();
+				contained = features[4].find(i) != features[4].end();
 				if( (feature && !contained) || (!feature && contained) )
 				{
 					cloud.pop_back();
@@ -705,17 +922,17 @@ vector<Point> MapReader::findCloud(const Point &pt,
 		Point n = Point(curPoint.x, curPoint.y-1),
 			s = Point(curPoint.x, curPoint.y+1),
 			e = Point(curPoint.x+1, curPoint.y),
-            w = Point(curPoint.x-1, curPoint.y);
-        if(seen.find(w) == seen.end() && curPoint.x != 0)
+			w = Point(curPoint.x-1, curPoint.y);
+		if(seen.find(w) == seen.end() && curPoint.x != 0)
 			children.push(w);
-        if(seen.find(e) == seen.end() && curPoint.x != campusImage.cols)
-            children.push(e);
-        if(seen.find(n) == seen.end() && curPoint.y != 0)
+		if(seen.find(e) == seen.end() && curPoint.x != campusImage.cols)
+			children.push(e);
+		if(seen.find(n) == seen.end() && curPoint.y != 0)
 			children.push(n);
-        if(seen.find(s) == seen.end() && curPoint.y != campusImage.rows)
+		if(seen.find(s) == seen.end() && curPoint.y != campusImage.rows)
 			children.push(s);
 
-		// qDebug() << count++;
+		count++;
 
 	}
 
@@ -727,7 +944,7 @@ void MapReader::clicked(QMouseEvent *e)
 {
 	// cout << e->x() << "," << e->y() << endl;
 	Point pt(e->x(), e->y());
-    Building buildPt(pt, minArea);
+	Building buildPt(pt, minArea);
 
 	unordered_set<int> nearLoc, northLoc, southLoc, eastLoc, westLoc;
 
@@ -744,16 +961,71 @@ void MapReader::clicked(QMouseEvent *e)
 	for(uchar i = 0; i < buildings.size(); i++)
 	{
 		if( near( buildings[i], buildPt ) )
-			nearLoc.insert(i+1);
+			nearLoc.insert(i);
 		if( north( buildings[i], buildPt ) )
-			northLoc.insert(i+1);
+			northLoc.insert(i);
 		if( south( buildings[i], buildPt ) )
-			southLoc.insert(i+1);
+			southLoc.insert(i);
 		if( east( buildings[i], buildPt ) )
-			eastLoc.insert(i+1);
+			eastLoc.insert(i);
 		if( west( buildings[i], buildPt ) )
-			westLoc.insert(i+1);
+			westLoc.insert(i);
 	}
+
+
+	//eliminate extraneous relations via transitivity
+	unordered_set<int> temp((const unordered_set<int>)northLoc);
+	for(auto i = northLoc.begin(); i != northLoc.end(); i++)
+	{
+		for(auto j = northLoc.begin(); j != northLoc.end(); j++)
+		{
+			if( northR[*i][*j] )
+			{
+				temp.erase(*i);
+			}
+		}
+	}
+	northLoc = temp;
+
+	temp = (const unordered_set<int>)southLoc;
+	for(auto i = southLoc.begin(); i != southLoc.end(); i++)
+	{
+		for(auto j = southLoc.begin(); j != southLoc.end(); j++)
+		{
+			if( southR[*i][*j] )
+			{
+				temp.erase(*i);
+			}
+		}
+	}
+	southLoc = temp;
+
+	temp = (const unordered_set<int>)eastLoc;
+	for(auto i = eastLoc.begin(); i != eastLoc.end(); i++)
+	{
+		for(auto j = eastLoc.begin(); j != eastLoc.end(); j++)
+		{
+			if( eastR[*i][*j] )
+			{
+				temp.erase(*i);
+			}
+		}
+	}
+	eastLoc = temp;
+
+	temp = (const unordered_set<int>)westLoc;
+	for(auto i = westLoc.begin(); i != westLoc.end(); i++)
+	{
+		for(auto j = westLoc.begin(); j != westLoc.end(); j++)
+		{
+			if( westR[*i][*j] )
+			{
+				temp.erase(*i);
+			}
+		}
+	}
+	westLoc = temp;
+
 
 	vector< unordered_set< int > > features;
 	features.push_back(nearLoc);
@@ -762,11 +1034,11 @@ void MapReader::clicked(QMouseEvent *e)
 	features.push_back(eastLoc);
 	features.push_back(westLoc);
 
-	// printFeatures(features);
+	printFeatures(pt, features);
 
-     vector<Point> cloud = findCloud(pt, features);
+	vector<Point> cloud = findCloud(pt, features);
 
-     drawCloud(cloud);
+	drawCloud(cloud);
 }
 
 void MapReader::drawCloud(vector<Point> cloud)
@@ -774,7 +1046,7 @@ void MapReader::drawCloud(vector<Point> cloud)
 	Mat cloudImage = campusImage.clone();
 	for (std::vector<Point>::iterator i = cloud.begin(); i != cloud.end(); ++i)
 	{
-        if(cloudImage.at<Vec3b>(*i) == Vec3b(255, 255, 255))
+		if(cloudImage.at<Vec3b>(*i) == Vec3b(255, 255, 255))
 			cloudImage.at<Vec3b>(*i) = Vec3b(0,100,0);
 		else
 			cloudImage.at<Vec3b>(*i) += Vec3b(0,100,0);
